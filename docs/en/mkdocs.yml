@@ -1,0 +1,75 @@
+site_name: pydantic-i18n
+site_description: pydantic-i18n is an extension to support an i18n for the pydantic error messages.
+site_url: https://pydantic-i18n.boardpack.org
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+  - scheme: default
+    primary: deep purple
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to dark mode
+  - scheme: slate
+    primary: deep purple
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to light mode
+  features:
+  - search.suggest
+  - search.highlight
+  - navigation.tabs
+  icon:
+    repo: fontawesome/brands/github-alt
+  logo: img/icon-white.png
+  favicon: img/favicon.png
+  language: en
+repo_name: boardpack/pydantic-i18n
+repo_url: https://github.com/boardpack/pydantic-i18n
+edit_uri: ''
+copyright: Copyright &copy; 2021
+plugins:
+- search
+- markdownextradata:
+    data: data
+nav:
+- pydantic-i18n: index.md
+- contributing.md
+- release-notes.md
+markdown_extensions:
+- toc:
+    permalink: true
+- markdown.extensions.codehilite:
+    guess_lang: false
+- markdown_include.include:
+    base_path: docs
+- admonition
+- codehilite
+- extra
+- meta
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_div_format ''
+- pymdownx.tabbed
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: https://github.com/boardpack/pydantic-i18n
+  - icon: fontawesome/brands/telegram
+    link: https://t.me/dukkee
+  - icon: fontawesome/solid/globe
+    link: https://boardpack.org
+  alternate:
+  - link: /
+    name: English
+extra_css:
+- css/termynal.css
+- css/custom.css
+extra_javascript:
+- https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js
+- js/termynal.js
+- js/custom.js
