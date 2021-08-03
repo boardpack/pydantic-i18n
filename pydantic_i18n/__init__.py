@@ -1,4 +1,4 @@
-"""Top-level package for pydantic-i18n."""
+"""pydantic-i18n is an extension to support an i18n for the pydantic error messages."""
 
 __author__ = """Roman Sadzhenytsia"""
 __email__ = "urchin.dukkee@gmail.com"
