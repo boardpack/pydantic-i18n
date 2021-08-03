@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 📝 Fix top package description. PR [#5](https://github.com/boardpack/pydantic-i18n/pull/5) by [@dukkee](https://github.com/dukkee).
 
 ## 0.1.0
 
