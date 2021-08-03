@@ -2,6 +2,9 @@
 
 ## Latest Changes
 
+
+## 0.1.0
+
 ### Features
 
 * ✨ Add support for translations loading from the dictionary, JSON files, and Babel files.
