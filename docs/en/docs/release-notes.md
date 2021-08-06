@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 📝 Add FastAPI example to the docs. PR [#9](https://github.com/boardpack/pydantic-i18n/pull/9) by [@dukkee](https://github.com/dukkee).
 
 ## 0.1.1
 
