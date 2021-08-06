@@ -51,6 +51,18 @@ def test_unsupported_locale(loader: BaseLoader):
 
 
 @pytest.mark.parametrize(
+    "loader",
+    [
+        pytest.lazy_fixture("json_loader"),
+        pytest.lazy_fixture("dict_loader"),
+        pytest.lazy_fixture("babel_loader"),
+    ],
+)
+def test_unknown_key(loader: BaseLoader):
+    assert loader.gettext("unknown key", "en_US") == "unknown key"
+
+
+@pytest.mark.parametrize(
     "loader_class",
     [
         JsonLoader,
