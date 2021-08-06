@@ -26,7 +26,7 @@ class BaseLoader:
             raise ValueError(f"Locale '{locale}' wasn't found.")
 
         data = self.get_translations(locale)
-        return data[key]
+        return data.get(key, key)
 
 
 class DictLoader(BaseLoader):
