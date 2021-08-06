@@ -70,6 +70,112 @@ _(This script is complete, it should run "as is")_
 In the next chapters, you will see current available loaders and how to 
 implement your own loader.
 
+## Usage with FastAPI
+
+Here is a simple example usage with FastAPI.
+
+### Create it
+
+Let's create a `tr.py` file:
+
+```Python linenums="1" hl_lines="13-22 25-26 32 35"
+{!../../../docs_src/fastapi-usage/tr.py!}
+```
+
+`11-20`: As you see, we selected the simplest variant to store translations, 
+you can use any that you need.
+
+`23-24`: To not include `locale` query parameter into every handler, we 
+created a simple function `get_locale`, which we will include as a global 
+dependency with `Depends`.
+
+`29-36`: An example of overridden function to return translated messages of the
+validation exception.
+
+Now we are ready to create a FastAPI application:
+
+```Python linenums="1" hl_lines="8 10"
+{!../../../docs_src/fastapi-usage/main.py!}
+```
+
+`8`: Add `get_locale` function as a global dependency.
+
+!!! note
+    If you need to use i18n only for specific part of your 
+    application, you can add this `get_locale` function to the specific 
+    `APIRouter`. More information about `APIRouter` you can find 
+    [here](https://fastapi.tiangolo.com/tutorial/bigger-applications/#apirouter).
+
+`10`: Override default request validation error handler with 
+`validation_exception_handler`.
+
+### Run it
+
+Run the server with:
+
+<div class="termy">
+
+```console
+$ uvicorn main:app --reload
+
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [28720]
+INFO:     Started server process [28722]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+
+</div>
+
+<details markdown="1">
+<summary>About the command <code>uvicorn main:app --reload</code>...</summary>
+
+The command `uvicorn main:app` refers to:
+
+* `main`: the file `main.py` (the Python "module").
+* `app`: the object created inside of `main.py` with the line `app = FastAPI()`.
+* `--reload`: make the server restart after code changes. Only do this for development.
+
+</details>
+
+### Send it
+
+Open your browser at <a href="http://127.0.0.1:8000/docs#/default/create_user_user_post" class="external-link" target="_blank">http://127.0.0.1:8000/docs#/default/create_user_user_post</a>.
+
+Send POST-request with empty body and `de_DE` locale query param via swagger UI
+ or `curl`:
+
+```bash
+$ curl -X 'POST' \
+  'http://127.0.0.1:8000/user?locale=de_DE' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+}'
+```
+
+### Check it
+
+As a result, you will get the next response body:
+
+```json hl_lines="8"
+{
+  "detail": [
+    {
+      "loc": [
+        "body",
+        "name"
+      ],
+      "msg": "Feld erforderlich",
+      "type": "value_error.missing"
+    }
+  ]
+}
+```
+
+If you don't mention the `locale` param, English locale will be used by 
+default.
+
 ## Get current error strings from Pydantic
 
 pydantic-i18n doesn't provide prepared translations of all current error 
