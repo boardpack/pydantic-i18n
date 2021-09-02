@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 2.0.2 to 2.0.3. PR [#11](https://github.com/boardpack/pydantic-i18n/pull/11) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Fix unknown key usage. PR [#10](https://github.com/boardpack/pydantic-i18n/pull/10) by [@dukkee](https://github.com/dukkee).
 * 📝 Add FastAPI example to the docs. PR [#9](https://github.com/boardpack/pydantic-i18n/pull/9) by [@dukkee](https://github.com/dukkee).
 
