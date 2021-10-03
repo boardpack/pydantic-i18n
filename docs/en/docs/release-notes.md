@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 2.0.3 to 2.1.0. PR [#14](https://github.com/boardpack/pydantic-i18n/pull/14) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.14.0 to 2.14.1. PR [#12](https://github.com/boardpack/pydantic-i18n/pull/12) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 2.0.2 to 2.0.3. PR [#11](https://github.com/boardpack/pydantic-i18n/pull/11) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Fix unknown key usage. PR [#10](https://github.com/boardpack/pydantic-i18n/pull/10) by [@dukkee](https://github.com/dukkee).
