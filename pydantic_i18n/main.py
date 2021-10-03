@@ -1,3 +1,4 @@
+import re
 import json
 from typing import Any, Callable, Dict, List, Sequence, Union
 
@@ -45,7 +46,7 @@ class PydanticI18n:
         from pydantic import errors
 
         messages = (
-            getattr(errors, name).msg_template
+            re.sub(r'\{.+\}', '{}', getattr(errors, name).msg_template)
             for name in errors.__all__
             if hasattr(getattr(errors, name), "msg_template")
         )

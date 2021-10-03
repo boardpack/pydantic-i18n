@@ -1,7 +1,3 @@
-import json
-import re
-from typing import Dict
-
 import pytest
 
 from pydantic import BaseModel, ValidationError
@@ -82,43 +78,3 @@ def test_unsupported_locale(tr: PydanticI18n):
 def test_dict_source():
     tr = PydanticI18n(translations)
     assert isinstance(tr.source, BaseLoader)
-
-
-def _test_pydantic_messages(data: Dict[str, str]) -> None:
-    assert len(data)
-    for k, v in data.items():
-        assert isinstance(k, str)
-        assert k == v
-
-
-def test_pydantic_messages_json():
-    output = PydanticI18n.get_pydantic_messages(output="json")
-    assert isinstance(output, str)
-
-    dict_output = json.loads(output)
-    _test_pydantic_messages(dict_output)
-
-
-def test_pydantic_messages_dict():
-    output = PydanticI18n.get_pydantic_messages(output="dict")
-    assert isinstance(output, dict)
-    _test_pydantic_messages(output)
-
-
-def test_pydantic_messages_dict_by_default():
-    output = PydanticI18n.get_pydantic_messages()
-    assert isinstance(output, dict)
-    _test_pydantic_messages(output)
-
-
-def test_pydantic_messages_babel():
-    output = PydanticI18n.get_pydantic_messages(output="babel")
-    assert isinstance(output, str)
-
-    dict_output = dict(
-        zip(
-            re.findall('msgid "(.+)"\n', output),
-            re.findall('msgstr "(.+)"\n', output),
-        )
-    )
-    _test_pydantic_messages(dict_output)
