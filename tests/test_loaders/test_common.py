@@ -15,7 +15,7 @@ from pydantic_i18n import BabelLoader, BaseLoader, JsonLoader
 )
 def test_get_locales(loader: BaseLoader):
     locales = loader.locales
-    assert len(locales) == 2
+    assert len(locales) >= 2
     for locale in ("en_US", "de_DE"):
         assert locale in locales
 

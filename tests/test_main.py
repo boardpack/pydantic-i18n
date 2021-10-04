@@ -1,3 +1,5 @@
+from enum import Enum
+
 import pytest
 
 from pydantic import BaseModel, ValidationError
@@ -6,17 +8,25 @@ from pydantic_i18n import BaseLoader, DictLoader, PydanticI18n
 translations = {
     "en_US": {
         "field required": "field required",
+        "value is not a valid enumeration member; permitted: {}": "value is not a valid enumeration member; permitted: {}",
     },
     "de_DE": {
         "field required": "Feld erforderlich",
+    },
+    "es_AR": {
+        "value is not a valid enumeration member; permitted: {}": "el valor no es uno de los valores permitidos, que son: {}",
     },
 }
 
 
 @pytest.fixture
+def dict_loader() -> DictLoader:
+    return DictLoader(translations)
+
+
+@pytest.fixture
 def tr() -> PydanticI18n:
-    loader = DictLoader(translations)
-    return PydanticI18n(loader)
+    return PydanticI18n(translations)
 
 
 def test_required_message():
@@ -78,3 +88,33 @@ def test_unsupported_locale(tr: PydanticI18n):
 def test_dict_source():
     tr = PydanticI18n(translations)
     assert isinstance(tr.source, BaseLoader)
+
+
+@pytest.mark.parametrize(
+    "loader",
+    [
+        pytest.lazy_fixture("dict_loader"),
+        pytest.lazy_fixture("babel_loader"),
+    ],
+)
+def test_key_with_placeholder(loader: BaseLoader):
+    class ACoolEnum(Enum):
+        NINE_TO_TWELVE = "9_to_12"
+        TWELVE_TO_FIFTEEN = "12_to_15"
+        FOURTEEN_TO_EIGHTEEN = "14_to_18"
+
+    class CoolSchema(BaseModel):
+        enum_field: ACoolEnum
+
+    tr = PydanticI18n(loader, default_locale="en_US")
+
+    locale = "es_AR"
+    with pytest.raises(ValidationError) as e:
+        CoolSchema(enum_field="invalid value")
+
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
+    assert (
+        translated_errors[0]["msg"]
+        == "el valor no es uno de los valores permitidos, que son: '9_to_12', "
+        "'12_to_15', '14_to_18'"
+    )
