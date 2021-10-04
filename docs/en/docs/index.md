@@ -55,11 +55,11 @@ $ pip install pydantic-i18n
 
 ## First steps
 
-To start to work with pydantic-i18n, you can just create a dictionary (or 
-create any needed translations storage and then convert it into dictionary) 
-and pass to the main `PydanticI18n` class. 
+To start to work with pydantic-i18n, you can just create a dictionary (or
+create any needed translations storage and then convert it into dictionary)
+and pass to the main `PydanticI18n` class.
 
-To translate messages, you need to pass result of `exception.errors()` call to 
+To translate messages, you need to pass result of `exception.errors()` call to
 the `translate` method:
 
 ```Python  hl_lines="14 24"
@@ -67,7 +67,7 @@ the `translate` method:
 ```
 _(This script is complete, it should run "as is")_
 
-In the next chapters, you will see current available loaders and how to 
+In the next chapters, you will see current available loaders and how to
 implement your own loader.
 
 ## Usage with FastAPI
@@ -82,11 +82,11 @@ Let's create a `tr.py` file:
 {!../../../docs_src/fastapi-usage/tr.py!}
 ```
 
-`11-20`: As you see, we selected the simplest variant to store translations, 
+`11-20`: As you see, we selected the simplest variant to store translations,
 you can use any that you need.
 
-`23-24`: To not include `locale` query parameter into every handler, we 
-created a simple function `get_locale`, which we will include as a global 
+`23-24`: To not include `locale` query parameter into every handler, we
+created a simple function `get_locale`, which we will include as a global
 dependency with `Depends`.
 
 `29-36`: An example of overridden function to return translated messages of the
@@ -101,12 +101,12 @@ Now we are ready to create a FastAPI application:
 `8`: Add `get_locale` function as a global dependency.
 
 !!! note
-    If you need to use i18n only for specific part of your 
-    application, you can add this `get_locale` function to the specific 
-    `APIRouter`. More information about `APIRouter` you can find 
+    If you need to use i18n only for specific part of your
+    application, you can add this `get_locale` function to the specific
+    `APIRouter`. More information about `APIRouter` you can find
     [here](https://fastapi.tiangolo.com/tutorial/bigger-applications/#apirouter).
 
-`10`: Override default request validation error handler with 
+`10`: Override default request validation error handler with
 `validation_exception_handler`.
 
 ### Run it
@@ -173,14 +173,23 @@ As a result, you will get the next response body:
 }
 ```
 
-If you don't mention the `locale` param, English locale will be used by 
+If you don't mention the `locale` param, English locale will be used by
 default.
+
+## Use placeholder in error strings
+
+You can use placeholders in error strings, but you **must mark** every placeholder with `{}`.
+
+```Python
+{!../../../docs_src/pydantic-messages/tutorial001.py!}
+```
+_(This script is complete, it should run "as is")_
 
 ## Get current error strings from Pydantic
 
-pydantic-i18n doesn't provide prepared translations of all current error 
-messages from pydantic, but you can use a special class method 
-`PydanticI18n.get_pydantic_messages` to load original messages in English. By 
+pydantic-i18n doesn't provide prepared translations of all current error
+messages from pydantic, but you can use a special class method
+`PydanticI18n.get_pydantic_messages` to load original messages in English. By
 default, it returns a `dict` object:
 
 ```Python
@@ -188,7 +197,7 @@ default, it returns a `dict` object:
 ```
 _(This script is complete, it should run "as is")_
 
-You can also choose JSON string or Babel format with `output` parameter values 
+You can also choose JSON string or Babel format with `output` parameter values
 `"json"` and `"babel"`:
 
 ```Python
@@ -203,7 +212,7 @@ pydantic-i18n provides a list of loaders to use translations.
 
 ### DictLoader
 
-DictLoader is the simplest loader and default in PydanticI18n. So you can 
+DictLoader is the simplest loader and default in PydanticI18n. So you can
 just pass your translations dictionary without any other preparation steps.
 
 ```Python
@@ -244,7 +253,7 @@ _(This script is complete, it should run "as is")_
 
 ### BabelLoader
 
-BabelLoader works in the similar way as JsonLoader. It also needs a 
+BabelLoader works in the similar way as JsonLoader. It also needs a
 translations directory with the next structure:
 
 ```text
@@ -262,7 +271,7 @@ translations directory with the next structure:
 ```
 
 Information about translations preparation you can find on the
-[Babel docs pages](http://babel.pocoo.org/en/latest/cmdline.html){:target="_blank"} and e.g. 
+[Babel docs pages](http://babel.pocoo.org/en/latest/cmdline.html){:target="_blank"} and e.g.
 from [this article](https://phrase.com/blog/posts/i18n-advantages-babel-python/#Message_Extraction){:target="_blank"}.
 
 Here is an example of the `BabelLoader` usage:
@@ -274,14 +283,14 @@ _(This script is complete, it should run "as is")_
 
 ### Write your own loader
 
-If current loaders aren't suitable for you, it's possible to write your own 
-loader and use it with pydantic-i18n. To do it, you need to import 
+If current loaders aren't suitable for you, it's possible to write your own
+loader and use it with pydantic-i18n. To do it, you need to import
 `BaseLoader` and implement the next items:
 
  - property `locales` to get a list of locales;
  - method `get_translations` to get content for the specific locale.
 
-In some cases you will also need to change implementation of the `gettext` 
+In some cases you will also need to change implementation of the `gettext`
 method.
 
 Here is an example of the loader to get translations from CSV files:
@@ -313,11 +322,11 @@ _(This script is complete, it should run "as is")_
 
 ## Acknowledgments
 
-Thanks to [Samuel Colvin](https://github.com/samuelcolvin) and his 
+Thanks to [Samuel Colvin](https://github.com/samuelcolvin) and his
 [pydantic](https://github.com/samuelcolvin/pydantic) library.
 
-Also, thanks to [Sebastián Ramírez](https://github.com/tiangolo) and his 
-[FastAPI](https://github.com/tiangolo/fastapi) project,  some scripts and 
+Also, thanks to [Sebastián Ramírez](https://github.com/tiangolo) and his
+[FastAPI](https://github.com/tiangolo/fastapi) project,  some scripts and
 documentation structure and parts were used from there.
 
 ## License
