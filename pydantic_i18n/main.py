@@ -46,11 +46,8 @@ class PydanticI18n:
     def translate(
         self,
         errors: List[Dict[str, Any]],
-        locale: str = "",
+        locale: str,
     ) -> List[Dict[str, Any]]:
-        if not locale:
-            locale = self.default_locale
-
         return [
             {
                 **error,
