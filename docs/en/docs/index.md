@@ -181,7 +181,7 @@ default.
 You can use placeholders in error strings, but you **must mark** every placeholder with `{}`.
 
 ```Python
-{!../../../docs_src/pydantic-messages/tutorial001.py!}
+{!../../../docs_src/placeholder/tutorial001.py!}
 ```
 _(This script is complete, it should run "as is")_
 
