@@ -81,13 +81,5 @@ class BabelLoader(BaseLoader):
     def locales(self) -> Sequence[str]:
         return tuple(self.translations)
 
-    def get_translations(self, locale: str) -> Translations:
-        return self.translations[locale]
-
-    def gettext(self, key: str, locale: str) -> str:
-        if locale not in self.locales:
-            raise ValueError(f"Locale '{locale}' wasn't found.")
-
-        translations = self.get_translations(locale)
-        result: str = translations.ugettext(key)
-        return result
+    def get_translations(self, locale: str) -> Dict[str, str]:
+        return {k: v for k, v in self.translations[locale]._catalog.items() if k}

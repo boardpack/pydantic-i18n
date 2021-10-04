@@ -1,9 +1,8 @@
 import json
-import os
 
 import pytest
 
-from pydantic_i18n import BabelLoader, DictLoader, JsonLoader
+from pydantic_i18n import DictLoader, JsonLoader
 
 
 @pytest.fixture
@@ -39,18 +38,8 @@ def json_translations_directory(tmp_path) -> str:
 
 
 @pytest.fixture
-def babel_translations_directory() -> str:
-    return os.path.abspath("./tests/translations/babel")
-
-
-@pytest.fixture
 def json_loader(json_translations_directory: str) -> JsonLoader:
     return JsonLoader(json_translations_directory)
-
-
-@pytest.fixture
-def babel_loader(babel_translations_directory: str) -> BabelLoader:
-    return BabelLoader(babel_translations_directory)
 
 
 @pytest.fixture

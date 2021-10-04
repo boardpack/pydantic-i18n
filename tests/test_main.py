@@ -1,6 +1,4 @@
-import json
-import re
-from typing import Dict
+from enum import Enum
 
 import pytest
 
@@ -10,17 +8,25 @@ from pydantic_i18n import BaseLoader, DictLoader, PydanticI18n
 translations = {
     "en_US": {
         "field required": "field required",
+        "value is not a valid enumeration member; permitted: {}": "value is not a valid enumeration member; permitted: {}",
     },
     "de_DE": {
         "field required": "Feld erforderlich",
+    },
+    "es_AR": {
+        "value is not a valid enumeration member; permitted: {}": "el valor no es uno de los valores permitidos, que son: {}",
     },
 }
 
 
 @pytest.fixture
+def dict_loader() -> DictLoader:
+    return DictLoader(translations)
+
+
+@pytest.fixture
 def tr() -> PydanticI18n:
-    loader = DictLoader(translations)
-    return PydanticI18n(loader)
+    return PydanticI18n(translations)
 
 
 def test_required_message():
@@ -84,41 +90,31 @@ def test_dict_source():
     assert isinstance(tr.source, BaseLoader)
 
 
-def _test_pydantic_messages(data: Dict[str, str]) -> None:
-    assert len(data)
-    for k, v in data.items():
-        assert isinstance(k, str)
-        assert k == v
+@pytest.mark.parametrize(
+    "loader",
+    [
+        pytest.lazy_fixture("dict_loader"),
+        pytest.lazy_fixture("babel_loader"),
+    ],
+)
+def test_key_with_placeholder(loader: BaseLoader):
+    class ACoolEnum(Enum):
+        NINE_TO_TWELVE = "9_to_12"
+        TWELVE_TO_FIFTEEN = "12_to_15"
+        FOURTEEN_TO_EIGHTEEN = "14_to_18"
 
+    class CoolSchema(BaseModel):
+        enum_field: ACoolEnum
 
-def test_pydantic_messages_json():
-    output = PydanticI18n.get_pydantic_messages(output="json")
-    assert isinstance(output, str)
+    tr = PydanticI18n(loader, default_locale="en_US")
 
-    dict_output = json.loads(output)
-    _test_pydantic_messages(dict_output)
+    locale = "es_AR"
+    with pytest.raises(ValidationError) as e:
+        CoolSchema(enum_field="invalid value")
 
-
-def test_pydantic_messages_dict():
-    output = PydanticI18n.get_pydantic_messages(output="dict")
-    assert isinstance(output, dict)
-    _test_pydantic_messages(output)
-
-
-def test_pydantic_messages_dict_by_default():
-    output = PydanticI18n.get_pydantic_messages()
-    assert isinstance(output, dict)
-    _test_pydantic_messages(output)
-
-
-def test_pydantic_messages_babel():
-    output = PydanticI18n.get_pydantic_messages(output="babel")
-    assert isinstance(output, str)
-
-    dict_output = dict(
-        zip(
-            re.findall('msgid "(.+)"\n', output),
-            re.findall('msgstr "(.+)"\n', output),
-        )
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
+    assert (
+        translated_errors[0]["msg"]
+        == "el valor no es uno de los valores permitidos, que son: '9_to_12', "
+        "'12_to_15', '14_to_18'"
     )
-    _test_pydantic_messages(dict_output)

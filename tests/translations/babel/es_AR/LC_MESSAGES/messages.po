@@ -22,4 +22,4 @@ msgid "field required"
 msgstr "field required"
 
 msgid "value is not a valid enumeration member; permitted: {}"
-msgstr "value is not a valid enumeration member; permitted: {}"
+msgstr "el valor no es uno de los valores permitidos, que son: {}"
