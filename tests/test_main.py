@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Dict
 
 import pytest
 
@@ -43,7 +44,27 @@ def test_locales(tr: PydanticI18n):
     assert set(tr.locales) == set(translations)
 
 
-def test_required_message_translation(tr: PydanticI18n):
+@pytest.mark.parametrize(
+    "translation_data",
+    [
+        translations,
+        {
+            "en_US": {
+                "field required": "field required",
+            },
+            "de_DE": {
+                "field required": "Feld erforderlich",
+            },
+        },
+    ],
+    ids=[
+        "multiple_keys",
+        "single_keys",
+    ],
+)
+def test_required_message_translation(translation_data: Dict[str, Dict[str, str]]):
+    tr = PydanticI18n(translation_data)
+
     class User(BaseModel):
         name: str
 

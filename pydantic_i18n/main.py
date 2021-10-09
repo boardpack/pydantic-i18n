@@ -28,11 +28,15 @@ class PydanticI18n:
 
     def _translate(self, message: str, locale: str) -> str:
         key = message
-        placeholder = self._pattern.search(message) or ""
+        placeholder = ""
+        searched = self._pattern.search(message)
 
-        if placeholder:
-            index = placeholder.groups().index(message) + 1  # type: ignore
-            placeholder = placeholder.groups()[index] or ""  # type: ignore
+        if searched:
+            groups = searched.groups()
+            index = groups.index(message)
+            placeholder = (
+                groups[index] or "" if len(groups) == 1 else groups[index + 1] or ""
+            )
 
             if placeholder and key != placeholder:
                 key = key.replace(placeholder, "{}")
