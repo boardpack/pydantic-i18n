@@ -31,8 +31,9 @@ class PydanticI18n:
         placeholder = self._pattern.search(message) or ""
 
         if placeholder:
-            index = placeholder.groups().index(message) + 1  # type: ignore
-            placeholder = placeholder.groups()[index] or ""  # type: ignore
+            groups = placeholder.groups()
+            index = groups.index(message)  # type: ignore
+            placeholder = groups[index] or "" if len(groups) == 1 else groups[index + 1] or ""
 
             if placeholder and key != placeholder:
                 key = key.replace(placeholder, "{}")
