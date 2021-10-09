@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🔧 Fix single key translations case. PR [#17](https://github.com/boardpack/pydantic-i18n/pull/17) by [@dukkee](https://github.com/dukkee).
 
 ## 0.2.0
 
