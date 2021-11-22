@@ -1,3 +1,4 @@
+import re
 from enum import Enum
 from typing import Dict
 
@@ -139,3 +140,20 @@ def test_key_with_placeholder(loader: BaseLoader):
         == "el valor no es uno de los valores permitidos, que son: '9_to_12', "
         "'12_to_15', '14_to_18'"
     )
+
+
+def test_placeholder_in_groups():
+    message = "value is not a valid integer"
+    pattern = re.compile("(field required)|(value is not a valid integer)")
+    searched = pattern.search(message)
+
+    groups = searched.groups()
+    index = groups.index(message)
+    placeholder = (
+        groups[index] or ("" if len(groups) == 1 else groups[index + 1]) or ""
+    )
+    assert message == placeholder
+
+    with pytest.raises(IndexError) as e:
+        _ = (groups[index] or "" if len(groups) == 1 else groups[index + 1] or "")
+    assert "tuple index out of range" == e.value
