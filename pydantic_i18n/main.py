@@ -35,7 +35,7 @@ class PydanticI18n:
             groups = searched.groups()
             index = groups.index(message)
             placeholder = (
-                groups[index] or "" if len(groups) == 1 else groups[index + 1] or ""
+                groups[index] or ("" if len(groups) == 1 else groups[index + 1]) or ""
             )
 
             if placeholder and key != placeholder:
