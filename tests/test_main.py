@@ -18,6 +18,10 @@ translations = {
     "es_AR": {
         "value is not a valid enumeration member; permitted: {}": "el valor no es uno de los valores permitidos, que son: {}",
     },
+    "zh_CN": {
+        "field required": "字段必填",
+        "value is not a valid integer": "字段必须为整数",
+    }
 }
 
 
@@ -156,4 +160,21 @@ def test_placeholder_in_groups():
 
     with pytest.raises(IndexError) as e:
         _ = (groups[index] or "" if len(groups) == 1 else groups[index + 1] or "")
-    assert "tuple index out of range" == e.value
+    assert "tuple index out of range" == e.value.args[0]
+
+    class User(BaseModel):
+        user_id: int
+
+    external_data = {
+        "user_id": "abc"
+    }
+
+    tr = PydanticI18n(translations)
+
+    with pytest.raises(ValidationError) as e:
+        User(**external_data)
+
+    locale = "zh_CN"
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
+
+    assert translations[locale][message] == translated_errors[0]['msg']
