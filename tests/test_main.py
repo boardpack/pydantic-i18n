@@ -17,6 +17,10 @@ translations = {
     "es_AR": {
         "value is not a valid enumeration member; permitted: {}": "el valor no es uno de los valores permitidos, que son: {}",
     },
+    "zh_CN": {
+        "field required": "字段必填",
+        "value is not a valid integer": "字段必须为整数",
+    }
 }
 
 
@@ -137,5 +141,41 @@ def test_key_with_placeholder(loader: BaseLoader):
     assert (
         translated_errors[0]["msg"]
         == "el valor no es uno de los valores permitidos, que son: '9_to_12', "
-        "'12_to_15', '14_to_18'"
+           "'12_to_15', '14_to_18'"
     )
+
+
+def test_placeholder_in_groups():
+    message = "value is not a valid integer"
+    import re
+    pattern = re.compile("(field required)|(value is not a valid integer)")
+    searched = pattern.search(message)
+
+    groups = searched.groups()
+    index = groups.index(message)
+    placeholder = (
+        groups[index] or ("" if len(groups) == 1 else groups[index + 1]) or ""
+    )
+    assert message == placeholder
+
+    with pytest.raises(IndexError) as e:
+        _ = (groups[index] or "" if len(groups) == 1 else groups[index + 1] or "")
+    assert "tuple index out of range" == e.value.args[0]
+
+    class User(BaseModel):
+        user_id: int
+
+    external_data = {
+        "user_id": "abc"
+    }
+
+    current_locale = "zh_CN"
+    tr = PydanticI18n(translations, default_locale=current_locale)
+
+    with pytest.raises(ValidationError) as e:
+        User(**external_data)
+
+    locale = "zh_CN"
+    translated_errors = tr.translate(e.value.errors(), locale=current_locale)
+
+    assert translations[locale][message] == translated_errors[0]['msg']
