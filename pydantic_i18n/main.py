@@ -40,7 +40,6 @@ class PydanticI18n:
                 placeholder = groups[index]
 
             placeholder = placeholder or ""
-            print('--------------------placeholder::', placeholder)
             if placeholder and key != placeholder:
                 key = key.replace(placeholder, "{}")
 
