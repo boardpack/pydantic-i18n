@@ -169,13 +169,12 @@ def test_placeholder_in_groups():
         "user_id": "abc"
     }
 
-    current_locale = "zh_CN"
-    tr = PydanticI18n(translations, default_locale=current_locale)
+    tr = PydanticI18n(translations)
 
     with pytest.raises(ValidationError) as e:
         User(**external_data)
 
     locale = "zh_CN"
-    translated_errors = tr.translate(e.value.errors(), locale=current_locale)
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
 
     assert translations[locale][message] == translated_errors[0]['msg']
