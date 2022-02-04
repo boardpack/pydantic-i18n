@@ -59,8 +59,6 @@ doc = [
     "mkdocs-material ==7.1.4",
     "markdown-include ==0.5.1",
     "mkdocs-markdownextradata-plugin ==0.1.9",
-    "typer-cli ==0.0.12",
-    "typer ==0.3.2",
     "pyyaml ==5.4.1",
 ]
 
