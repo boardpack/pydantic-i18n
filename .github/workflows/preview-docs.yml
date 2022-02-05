@@ -29,7 +29,7 @@ jobs:
 
       - name: Deploy to Netlify
         id: netlify
-        uses: nwtgck/actions-netlify@v1.2.2
+        uses: nwtgck/actions-netlify@v1.2.3
         with:
           publish-dir: './site'
           production-deploy: false
