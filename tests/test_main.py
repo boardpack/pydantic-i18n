@@ -139,3 +139,28 @@ def test_key_with_placeholder(loader: BaseLoader):
         == "el valor no es uno de los valores permitidos, que son: '9_to_12', "
         "'12_to_15', '14_to_18'"
     )
+
+
+def test_last_key_without_placeholder():
+    _translations = {
+        "en_US": {
+            "field required": "field required",
+            "value is not a valid integer": "value is not a valid integer",
+        },
+    }
+
+    class User(BaseModel):
+        user_id: int
+
+    message = "value is not a valid integer"
+    data = {"user_id": "abc"}
+
+    tr = PydanticI18n(_translations)
+
+    with pytest.raises(ValidationError) as e:
+        User(**data)
+
+    locale = "en_US"
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
+
+    assert _translations[locale][message] == translated_errors[0]["msg"]
