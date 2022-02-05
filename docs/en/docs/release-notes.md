@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump dawidd6/action-download-artifact from 2.15.0 to 2.17.0. PR [#24](https://github.com/boardpack/pydantic-i18n/pull/24) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 20.8b1 to 22.1.0. PR [#23](https://github.com/boardpack/pydantic-i18n/pull/23) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump dawidd6/action-download-artifact from 2.14.1 to 2.15.0. PR [#18](https://github.com/boardpack/pydantic-i18n/pull/18) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
