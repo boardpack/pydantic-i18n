@@ -70,7 +70,7 @@ class BabelLoader(BaseLoader):
     def __init__(self, translations_directory: str):
         try:
             from babel import Locale  # type: ignore
-        except ImportError as e:
+        except ImportError as e:  # pragma: no cover
             raise ImportError(
                 "babel not installed, you cannot use this loader.\n"
                 "To install, run: pip install babel"
