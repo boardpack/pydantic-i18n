@@ -2,7 +2,6 @@ import json
 import os
 from typing import Dict, Mapping, Sequence
 
-from babel import Locale  # type: ignore
 from babel.support import Translations  # type: ignore
 
 __all__ = (
@@ -69,6 +68,14 @@ class JsonLoader(BaseLoader):
 
 class BabelLoader(BaseLoader):
     def __init__(self, translations_directory: str):
+        try:
+            from babel import Locale  # type: ignore
+        except ImportError as e:  # pragma: no cover
+            raise ImportError(
+                "babel not installed, you cannot use this loader.\n"
+                "To install, run: pip install babel"
+            ) from e
+
         self.translations = {}
 
         for dir_name in os.listdir(translations_directory):

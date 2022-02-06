@@ -253,6 +253,12 @@ _(This script is complete, it should run "as is")_
 
 ### BabelLoader
 
+To use this loader, you need to install `babel` first:
+
+```bash
+(venv) $ pip install babel
+```
+
 BabelLoader works in the similar way as JsonLoader. It also needs a
 translations directory with the next structure:
 
