@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🐛 Fix last key usage without placeholder. PR [#25](https://github.com/boardpack/pydantic-i18n/pull/25) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump nwtgck/actions-netlify from 1.2.2 to 1.2.3. PR [#22](https://github.com/boardpack/pydantic-i18n/pull/22) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.15.0 to 2.17.0. PR [#24](https://github.com/boardpack/pydantic-i18n/pull/24) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 20.8b1 to 22.1.0. PR [#23](https://github.com/boardpack/pydantic-i18n/pull/23) by [@dukkee](https://github.com/dukkee).
