@@ -34,10 +34,13 @@ class PydanticI18n:
         if searched:
             groups = searched.groups()
             index = groups.index(message)
-            placeholder = (
-                groups[index] or "" if len(groups) == 1 else groups[index + 1] or ""
-            )
 
+            if len(groups) > index + 1:
+                placeholder = groups[index + 1]
+            elif len(groups) > index:
+                placeholder = groups[index]
+
+            placeholder = placeholder or ""
             if placeholder and key != placeholder:
                 key = key.replace(placeholder, "{}")
 
