@@ -332,3 +332,4 @@ documentation structure and parts were used from there.
 ## License
 
 This project is licensed under the terms of the MIT license.
+
