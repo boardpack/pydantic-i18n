@@ -2,6 +2,11 @@
 
 ## Latest Changes
 
+
+## 0.2.3
+
+### Fixes
+
 * 🐛 Fix unmoved import. PR [#28](https://github.com/boardpack/pydantic-i18n/pull/28) by [@dukkee](https://github.com/dukkee).
 
 ## 0.2.2
