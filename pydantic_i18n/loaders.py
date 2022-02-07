@@ -2,8 +2,6 @@ import json
 import os
 from typing import Dict, Mapping, Sequence
 
-from babel.support import Translations  # type: ignore
-
 __all__ = (
     "BaseLoader",
     "BabelLoader",
@@ -70,6 +68,7 @@ class BabelLoader(BaseLoader):
     def __init__(self, translations_directory: str):
         try:
             from babel import Locale  # type: ignore
+            from babel.support import Translations  # type: ignore
         except ImportError as e:  # pragma: no cover
             raise ImportError(
                 "babel not installed, you cannot use this loader.\n"
