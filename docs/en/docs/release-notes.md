@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump actions/checkout from 2 to 3. PR [#30](https://github.com/boardpack/pydantic-i18n/pull/30) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 2 to 3. PR [#29](https://github.com/boardpack/pydantic-i18n/pull/29) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.2.3
