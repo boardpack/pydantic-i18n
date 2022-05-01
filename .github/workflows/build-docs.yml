@@ -39,7 +39,7 @@ jobs:
 
       - name: Zip docs
         run: bash ./scripts/zip-docs.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: docs-zip
           path: ./docs.zip
