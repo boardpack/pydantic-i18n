@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump actions/upload-artifact from 2 to 3. PR [#33](https://github.com/boardpack/pydantic-i18n/pull/33) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆️ Bump dependencies. PR [#43](https://github.com/boardpack/pydantic-i18n/pull/43) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump actions/checkout from 2 to 3. PR [#30](https://github.com/boardpack/pydantic-i18n/pull/30) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 2 to 3. PR [#29](https://github.com/boardpack/pydantic-i18n/pull/29) by [@dependabot[bot]](https://github.com/apps/dependabot).
