@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ✨ Add Python 3.10 and 3.11 to the support list. PR [#45](https://github.com/boardpack/pydantic-i18n/pull/45) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump codecov/codecov-action from 2.1.0 to 3.1.1. PR [#40](https://github.com/boardpack/pydantic-i18n/pull/40) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.17.0 to 2.24.2. PR [#44](https://github.com/boardpack/pydantic-i18n/pull/44) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 3 to 4. PR [#38](https://github.com/boardpack/pydantic-i18n/pull/38) by [@dependabot[bot]](https://github.com/apps/dependabot).
