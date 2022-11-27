@@ -2,15 +2,27 @@
 
 ## Latest Changes
 
+
+## 0.3.0
+
+### Features
+
+* ✨ Add Python 3.10 and 3.11 to the support list. PR [#45](https://github.com/boardpack/pydantic-i18n/pull/45) by [@dukkee](https://github.com/dukkee).
+
+### Breaking Changes
+
+* 🔥 Drop Python 3.6 and 3.7 support. PR [#43](https://github.com/boardpack/pydantic-i18n/pull/45) by [@dukkee](https://github.com/dukkee).
+
+### Internal
+
 * 🔧 Migrate to the new flit style metadata. PR [#46](https://github.com/boardpack/pydantic-i18n/pull/46) by [@dukkee](https://github.com/dukkee).
 * 📝 Update project classifiers. PR [#47](https://github.com/boardpack/pydantic-i18n/pull/47) by [@dukkee](https://github.com/dukkee).
-* ✨ Add Python 3.10 and 3.11 to the support list. PR [#45](https://github.com/boardpack/pydantic-i18n/pull/45) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump codecov/codecov-action from 2.1.0 to 3.1.1. PR [#40](https://github.com/boardpack/pydantic-i18n/pull/40) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.17.0 to 2.24.2. PR [#44](https://github.com/boardpack/pydantic-i18n/pull/44) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 3 to 4. PR [#38](https://github.com/boardpack/pydantic-i18n/pull/38) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/cache from 2 to 3. PR [#34](https://github.com/boardpack/pydantic-i18n/pull/34) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/upload-artifact from 2 to 3. PR [#33](https://github.com/boardpack/pydantic-i18n/pull/33) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆️ Bump dependencies. PR [#43](https://github.com/boardpack/pydantic-i18n/pull/43) by [@dukkee](https://github.com/dukkee).
+* ⬆ Bump dependencies. PR [#43](https://github.com/boardpack/pydantic-i18n/pull/43) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump actions/checkout from 2 to 3. PR [#30](https://github.com/boardpack/pydantic-i18n/pull/30) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 2 to 3. PR [#29](https://github.com/boardpack/pydantic-i18n/pull/29) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
