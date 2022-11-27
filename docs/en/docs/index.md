@@ -33,7 +33,7 @@ hide:
 
 ## Requirements
 
-Python 3.6+
+Python 3.8+
 
 pydantic-i18n has the next dependencies:
 
