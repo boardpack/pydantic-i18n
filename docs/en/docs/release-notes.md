@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🔧 Migrate to the new flit style metadata. PR [#46](https://github.com/boardpack/pydantic-i18n/pull/46) by [@dukkee](https://github.com/dukkee).
 * 📝 Update project classifiers. PR [#47](https://github.com/boardpack/pydantic-i18n/pull/47) by [@dukkee](https://github.com/dukkee).
 * ✨ Add Python 3.10 and 3.11 to the support list. PR [#45](https://github.com/boardpack/pydantic-i18n/pull/45) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump codecov/codecov-action from 2.1.0 to 3.1.1. PR [#40](https://github.com/boardpack/pydantic-i18n/pull/40) by [@dependabot[bot]](https://github.com/apps/dependabot).
