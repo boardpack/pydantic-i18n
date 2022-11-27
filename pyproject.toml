@@ -2,12 +2,11 @@
 requires = ["flit"]
 build-backend = "flit.buildapi"
 
-[tool.flit.metadata]
-module = "pydantic_i18n"
-dist-name = "pydantic-i18n"
-author = "Roman Sadzhenytsia"
-author-email = "urchin.dukkee@gmail.com"
-home-page = "https://github.com/boardpack/pydantic-i18n"
+[project]
+name = "pydantic-i18n"
+authors = [
+    {name = "Roman Sadzhenytsia", email = "urchin.dukkee@gmail.com"},
+]
 classifiers = [
     "Intended Audience :: Information Technology",
     "Intended Audience :: System Administrators",
@@ -28,16 +27,21 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-description-file = "README.md"
+readme = "README.md"
 requires-python = ">=3.8.1"
-requires = [
+dependencies = [
     "pydantic >=1.8.2",
 ]
+dynamic = ["version", "description"]
 
-[tool.flit.metadata.urls]
+[tool.flit.module]
+name = "pydantic_i18n"
+
+[project.urls]
 Documentation = "https://pydantic-i18n.boardpack.org"
+Source = "https://github.com/boardpack/pydantic-i18n"
 
-[tool.flit.metadata.requires-extra]
+[project.optional-dependencies]
 test = [
     "pytest ==7.2.0",
     "pytest-cov ==4.0.0",
