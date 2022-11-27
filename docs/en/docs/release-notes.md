@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🔧 Change dependabot schedule interval to daily. PR [#48](https://github.com/boardpack/pydantic-i18n/pull/48) by [@dukkee](https://github.com/dukkee).
 
 ## 0.3.0
 
