@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     pull-request-branch-name:
       separator: "-"
     commit-message:
@@ -13,7 +13,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "daily"
     pull-request-branch-name:
       separator: "-"
     commit-message:
