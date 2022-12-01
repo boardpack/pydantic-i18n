@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mkdocs-material from 8.5.10 to 8.5.11. PR [#51](https://github.com/boardpack/pydantic-i18n/pull/51) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump nwtgck/actions-netlify from 1.2.3 to 1.2.4. PR [#49](https://github.com/boardpack/pydantic-i18n/pull/49) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Change dependabot schedule interval to daily. PR [#48](https://github.com/boardpack/pydantic-i18n/pull/48) by [@dukkee](https://github.com/dukkee).
 
