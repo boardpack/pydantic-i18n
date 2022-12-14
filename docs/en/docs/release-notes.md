@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump isort from 5.10.1 to 5.11.2. PR [#55](https://github.com/boardpack/pydantic-i18n/pull/55) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 22.10.0 to 22.12.0. PR [#53](https://github.com/boardpack/pydantic-i18n/pull/53) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump nwtgck/actions-netlify from 1.2.4 to 2.0.0. PR [#52](https://github.com/boardpack/pydantic-i18n/pull/52) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-material from 8.5.10 to 8.5.11. PR [#51](https://github.com/boardpack/pydantic-i18n/pull/51) by [@dependabot[bot]](https://github.com/apps/dependabot).
