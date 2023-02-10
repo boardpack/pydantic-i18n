@@ -1,8 +1,11 @@
 import json
 import re
-from typing import Any, Callable, Dict, List, Pattern, Sequence, Union
+from typing import Any, Callable, Dict, List, Pattern, Sequence, Union, TYPE_CHECKING
 
 from .loaders import BaseLoader, DictLoader
+
+if TYPE_CHECKING:
+    from pydantic.error_wrappers import ErrorDict
 
 __all__ = ("PydanticI18n",)
 
@@ -52,9 +55,9 @@ class PydanticI18n:
 
     def translate(
         self,
-        errors: List[Dict[str, Any]],
+        errors: List['ErrorDict'],
         locale: str,
-    ) -> List[Dict[str, Any]]:
+    ) -> List['ErrorDict']:
         return [
             {
                 **error,
