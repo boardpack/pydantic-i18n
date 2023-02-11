@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump pytest from 7.2.0 to 7.2.1. PR [#64](https://github.com/boardpack/pydantic-i18n/pull/64) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.0.0 to 2.0.1. PR [#69](https://github.com/boardpack/pydantic-i18n/pull/69) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Add bash to the allowlist_externals in the tox.ini. PR [#76](https://github.com/boardpack/pydantic-i18n/pull/76) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump isort from 5.11.2 to 5.11.4. PR [#57](https://github.com/boardpack/pydantic-i18n/pull/57) by [@dependabot[bot]](https://github.com/apps/dependabot).
