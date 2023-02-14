@@ -46,7 +46,7 @@ test = [
     "pytest ==7.2.1",
     "pytest-cov ==4.0.0",
     "pytest-lazy-fixture ==0.6.3",
-    "mypy ==0.991",
+    "mypy ==1.0.0",
     "flake8 ==6.0.0",
     "black ==23.1.0",
     "isort ==5.12.0",
