@@ -62,7 +62,7 @@ doc = [
     "mkdocs ==1.4.2",
     "mkdocs-material ==8.5.11",
     "markdown ==3.2.1",
-    "markdown-include ==0.8.0",
+    "markdown-include ==0.8.1",
     "mkdocs-markdownextradata-plugin ==0.2.5",
     "typer ==0.7.0",
     "pyyaml ==6.0.0",
