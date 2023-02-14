@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump markdown-include from 0.8.0 to 0.8.1. PR [#78](https://github.com/boardpack/pydantic-i18n/pull/78) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump isort from 5.11.4 to 5.12.0. PR [#68](https://github.com/boardpack/pydantic-i18n/pull/68) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 22.12.0 to 23.1.0. PR [#70](https://github.com/boardpack/pydantic-i18n/pull/70) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.24.2 to 2.24.3. PR [#61](https://github.com/boardpack/pydantic-i18n/pull/61) by [@dependabot[bot]](https://github.com/apps/dependabot).
