@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mypy from 1.0.0 to 1.0.1. PR [#80](https://github.com/boardpack/pydantic-i18n/pull/80) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 0.991 to 1.0.0. PR [#79](https://github.com/boardpack/pydantic-i18n/pull/79) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.24.3 to 2.25.0. PR [#77](https://github.com/boardpack/pydantic-i18n/pull/77) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown-include from 0.8.0 to 0.8.1. PR [#78](https://github.com/boardpack/pydantic-i18n/pull/78) by [@dependabot[bot]](https://github.com/apps/dependabot).
