@@ -67,8 +67,8 @@ class JsonLoader(BaseLoader):
 class BabelLoader(BaseLoader):
     def __init__(self, translations_directory: str):
         try:
-            from babel import Locale  # type: ignore
-            from babel.support import Translations  # type: ignore
+            from babel import Locale
+            from babel.support import Translations
         except ImportError as e:  # pragma: no cover
             raise ImportError(
                 "babel not installed, you cannot use this loader.\n"
@@ -80,7 +80,7 @@ class BabelLoader(BaseLoader):
         for dir_name in os.listdir(translations_directory):
             locale = Locale.parse(dir_name)
             self.translations[str(locale)] = Translations.load(
-                translations_directory, [locale]
+                translations_directory, [locale]  # type: ignore
             )
 
     @property
@@ -88,4 +88,4 @@ class BabelLoader(BaseLoader):
         return tuple(self.translations)
 
     def get_translations(self, locale: str) -> Dict[str, str]:
-        return {k: v for k, v in self.translations[locale]._catalog.items() if k}
+        return {k: v for k, v in self.translations[locale]._catalog.items() if k}  # type: ignore
