@@ -2,27 +2,25 @@
 
 ## Latest Changes
 
-* 🐛 Fix coverage. PR [#89](https://github.com/boardpack/pydantic-i18n/pull/89) by [@dukkee](https://github.com/dukkee).
+
+## 0.3.1
+
+### Fixes
+
 * 🎨 Improve translate method output type. PR [#88](https://github.com/boardpack/pydantic-i18n/pull/88) by [@dukkee](https://github.com/dukkee).
+
+### Internal
 * ⬆ Bump pytest from 7.2.1 to 7.2.2. PR [#87](https://github.com/boardpack/pydantic-i18n/pull/87) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump babel from 2.11.0 to 2.12.1. PR [#85](https://github.com/boardpack/pydantic-i18n/pull/85) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.25.0 to 2.26.0. PR [#82](https://github.com/boardpack/pydantic-i18n/pull/82) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.0.0 to 1.0.1. PR [#80](https://github.com/boardpack/pydantic-i18n/pull/80) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mypy from 0.991 to 1.0.0. PR [#79](https://github.com/boardpack/pydantic-i18n/pull/79) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump dawidd6/action-download-artifact from 2.24.3 to 2.25.0. PR [#77](https://github.com/boardpack/pydantic-i18n/pull/77) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown-include from 0.8.0 to 0.8.1. PR [#78](https://github.com/boardpack/pydantic-i18n/pull/78) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump isort from 5.11.4 to 5.12.0. PR [#68](https://github.com/boardpack/pydantic-i18n/pull/68) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 22.12.0 to 23.1.0. PR [#70](https://github.com/boardpack/pydantic-i18n/pull/70) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump dawidd6/action-download-artifact from 2.24.2 to 2.24.3. PR [#61](https://github.com/boardpack/pydantic-i18n/pull/61) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump pytest from 7.2.0 to 7.2.1. PR [#64](https://github.com/boardpack/pydantic-i18n/pull/64) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.0.0 to 2.0.1. PR [#69](https://github.com/boardpack/pydantic-i18n/pull/69) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Add bash to the allowlist_externals in the tox.ini. PR [#76](https://github.com/boardpack/pydantic-i18n/pull/76) by [@dukkee](https://github.com/dukkee).
-* ⬆ Bump isort from 5.11.2 to 5.11.4. PR [#57](https://github.com/boardpack/pydantic-i18n/pull/57) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump isort from 5.10.1 to 5.11.2. PR [#55](https://github.com/boardpack/pydantic-i18n/pull/55) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump black from 22.10.0 to 22.12.0. PR [#53](https://github.com/boardpack/pydantic-i18n/pull/53) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump nwtgck/actions-netlify from 1.2.4 to 2.0.0. PR [#52](https://github.com/boardpack/pydantic-i18n/pull/52) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-material from 8.5.10 to 8.5.11. PR [#51](https://github.com/boardpack/pydantic-i18n/pull/51) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump nwtgck/actions-netlify from 1.2.3 to 1.2.4. PR [#49](https://github.com/boardpack/pydantic-i18n/pull/49) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Change dependabot schedule interval to daily. PR [#48](https://github.com/boardpack/pydantic-i18n/pull/48) by [@dukkee](https://github.com/dukkee).
 
 ## 0.3.0
