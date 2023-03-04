@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Callable, Dict, List, Pattern, Sequence, Union
 
 from .loaders import BaseLoader, DictLoader
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from pydantic.error_wrappers import ErrorDict
 
 __all__ = ("PydanticI18n",)
