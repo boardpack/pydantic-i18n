@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🐛 Fix coverage. PR [#89](https://github.com/boardpack/pydantic-i18n/pull/89) by [@dukkee](https://github.com/dukkee).
 * 🎨 Improve translate method output type. PR [#88](https://github.com/boardpack/pydantic-i18n/pull/88) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump pytest from 7.2.1 to 7.2.2. PR [#87](https://github.com/boardpack/pydantic-i18n/pull/87) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump babel from 2.11.0 to 2.12.1. PR [#85](https://github.com/boardpack/pydantic-i18n/pull/85) by [@dependabot[bot]](https://github.com/apps/dependabot).
