@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mypy from 1.0.1 to 1.1.1. PR [#91](https://github.com/boardpack/pydantic-i18n/pull/91) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.3.1
 
