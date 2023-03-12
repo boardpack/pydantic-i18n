@@ -1,6 +1,8 @@
 import json
 import re
-from typing import TYPE_CHECKING, Callable, Dict, List, Pattern, Sequence, Union
+from locale import normalize
+from typing import TYPE_CHECKING, Any, Callable, Dict, List, Pattern, Sequence, Union
+from urllib.parse import urlparse
 
 from .loaders import BaseLoader, DictLoader
 
@@ -11,6 +13,11 @@ __all__ = ("PydanticI18n",)
 
 
 class PydanticI18n:
+    language_code_re = re.compile(
+        r"^[a-z]{1,8}(?:-[a-z0-9]{1,8})*(?:@[a-z0-9]{1,20})?$", re.IGNORECASE
+    )
+    language_code_prefix_re = re.compile(r"^/(\w+([@-]\w+){0,2})(/|$)")
+
     def __init__(
         self,
         source: Union[Dict[str, Dict[str, str]], BaseLoader],
@@ -97,3 +104,40 @@ class PydanticI18n:
             f'msgid "{item}"\nmsgstr "{item}"'
             for item in cls._get_pydantic_messages_dict()
         )
+
+    @classmethod
+    def get_locale_from_request(
+        cls,
+        url: Union[str, None] = None,
+        headers: Union[Dict[str, Any], None] = None,
+        default: Union[str, None] = None,
+    ) -> Union[str, None]:
+        lang = ""
+
+        if url:
+            parsed = urlparse(url)
+
+            if parsed.netloc.count(".") > 1:
+                lang = parsed.netloc.split(".")[0]
+            else:
+                result = cls.language_code_prefix_re.search(parsed.path)
+                if result:
+                    lang = result.group(1)
+
+        if headers:
+            lang = (
+                headers.get("Accept-Language") or headers.get("accept-language") or ""
+            )
+
+        if not cls.language_code_re.search(lang):
+            return default
+
+        lang = lang.lower()
+        if "-" in lang:
+            lang = lang.replace("-", "_")
+
+        locale = normalize(lang).split(".")[0]
+        if locale == lang:
+            return default  # assume that lang was incorrect, e.g. es2
+
+        return locale
