@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.8"
+          python-version: "3.11"
       - uses: actions/cache@v3
         id: cache
         with:
@@ -28,14 +28,14 @@ jobs:
 
       - name: Install Flit
         if: steps.cache.outputs.cache-hit != 'true'
-        run: python3.8 -m pip install flit
+        run: python3.11 -m pip install flit
 
       - name: Install docs extras
         if: steps.cache.outputs.cache-hit != 'true'
-        run: python3.8 -m flit install --extras doc
+        run: python3.11 -m flit install --extras doc
 
       - name: Build Docs
-        run: python3.8 ./scripts/docs.py build-all
+        run: python3.11 ./scripts/docs.py build-all
 
       - name: Zip docs
         run: bash ./scripts/zip-docs.sh
