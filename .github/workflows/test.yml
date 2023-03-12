@@ -32,7 +32,7 @@ jobs:
         run: flit install --symlink
 
       - name: Lint
-        run: ./scripts/lint.sh
+        run: bash ./scripts/lint.sh
 
       - name: Test
         run: tox
