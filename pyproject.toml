@@ -56,7 +56,6 @@ dev = [
     "autoflake ==2.0.1",
     "flake8 ==6.0.0",
     "pre-commit",
-    "tox >=3.27.1",
 ]
 doc = [
     "mkdocs ==1.4.2",
