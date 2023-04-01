@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump black from 23.1.0 to 23.3.0. PR [#102](https://github.com/boardpack/pydantic-i18n/pull/102) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.0.1 to 2.0.2. PR [#97](https://github.com/boardpack/pydantic-i18n/pull/97) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔥 Remove tox. PR [#96](https://github.com/boardpack/pydantic-i18n/pull/96) by [@dukkee](https://github.com/dukkee).
 * 👷 Add cache step to the test workflow. PR [#95](https://github.com/boardpack/pydantic-i18n/pull/95) by [@dukkee](https://github.com/dukkee).
