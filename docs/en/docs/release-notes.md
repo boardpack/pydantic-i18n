@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 3.1.2 to 3.1.3. PR [#113](https://github.com/boardpack/pydantic-i18n/pull/113) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pytest from 7.2.2 to 7.3.0. PR [#107](https://github.com/boardpack/pydantic-i18n/pull/107) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 3.1.1 to 3.1.2. PR [#108](https://github.com/boardpack/pydantic-i18n/pull/108) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.26.0 to 2.26.1. PR [#104](https://github.com/boardpack/pydantic-i18n/pull/104) by [@dependabot[bot]](https://github.com/apps/dependabot).
