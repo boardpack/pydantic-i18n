@@ -3,8 +3,11 @@ from typing import Dict
 
 import pytest
 
-from pydantic import BaseModel, ValidationError
-from pydantic_i18n import BaseLoader, DictLoader, PydanticI18n
+from pydantic import BaseModel
+from pydantic import ValidationError
+from pydantic_i18n import BaseLoader
+from pydantic_i18n import DictLoader
+from pydantic_i18n import PydanticI18n
 
 translations = {
     "en_US": {
@@ -164,3 +167,7 @@ def test_last_key_without_placeholder():
     translated_errors = tr.translate(e.value.errors(), locale=locale)
 
     assert _translations[locale][message] == translated_errors[0]["msg"]
+
+
+def test_not_found_translate(tr: PydanticI18n):
+    assert tr._translate("what is this?", locale="es_AR")

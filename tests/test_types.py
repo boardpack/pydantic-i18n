@@ -11,7 +11,7 @@ def test_regex_dict_get():
             "value is not valid integer": "value is not valid integer",
             "address (.+) is not support": "address {} is not support",
             "image (.+) is not valid (.+) for (.+)": "image {} is not valid {} for {}",
-        }
+        },
     )
     assert storage.get("address foo@bar.com is not support") is not None
     assert storage.get("image <object> is not valid object for bucket") is not None
@@ -38,7 +38,9 @@ def test_babel_regex_insert_get():
             "value is not valid integer": "value is not valid integer",
             "address {} is not support": "address {} is not support",
             "image {} is not valid {} for {}": "image {} is not valid {} for {}",
-        }
+        },
+        key="value",
+        another_key="another key"
     )
     storage["text {} in message not supported"] = "text {} in message not supported"
 
