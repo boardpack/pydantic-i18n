@@ -25,12 +25,6 @@ class PydanticI18n:
         self.default_locale = default_locale
         self._patterns = BabelRegex(self.source.get_translations(self.default_locale))
 
-    def _init_pattern(self) -> Pattern[str]:
-        keys = list(self.source.get_translations(self.default_locale))
-        return re.compile(
-            "|".join("({})".format(i.replace("{}", "(.+)")) for i in keys)
-        )
-
     def _translate(self, message: str, locale: str) -> str:
         source_msg_pattern = self._patterns.get(message)
         if source_msg_pattern:
