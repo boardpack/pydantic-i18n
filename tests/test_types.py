@@ -1,7 +1,8 @@
 import re
 from string import Formatter
 
-from pydantic_i18n.types import BabelRegex, RegexDict
+from pydantic_i18n.types import BabelRegex
+from pydantic_i18n.types import RegexDict
 
 
 def test_regex_dict_get():

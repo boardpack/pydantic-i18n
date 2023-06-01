@@ -1,9 +1,15 @@
 import json
 import re
 from string import Formatter
-from typing import TYPE_CHECKING, Callable, Dict, List, Pattern, Sequence, Union
+from typing import TYPE_CHECKING
+from typing import Callable
+from typing import Dict
+from typing import List
+from typing import Sequence
+from typing import Union
 
-from .loaders import BaseLoader, DictLoader
+from .loaders import BaseLoader
+from .loaders import DictLoader
 from .types import BabelRegex
 
 if TYPE_CHECKING:  # pragma: no cover
