@@ -34,12 +34,14 @@ class PydanticI18n:
     def _translate(self, message: str, locale: str) -> str:
         source_msg_pattern = self._patterns.get(message)
         if source_msg_pattern:
+            target_msg_pattern = self.source.gettext(source_msg_pattern, locale=locale)
             expression = self._patterns.expression(source_msg_pattern)
             expression_compiled = re.compile(expression)
             match = re.match(pattern=expression_compiled, string=message)
-            groups = match.groups()
-            target_msg_pattern = self.source.gettext(source_msg_pattern, locale=locale)
-            return Formatter().format(target_msg_pattern, *groups)
+            if match:
+                groups = match.groups()
+                return Formatter().format(target_msg_pattern, *groups)
+            return target_msg_pattern
         return message
 
     @property
