@@ -1,8 +1,10 @@
 import json
 import re
+from string import Formatter
 from typing import TYPE_CHECKING, Callable, Dict, List, Pattern, Sequence, Union
 
 from .loaders import BaseLoader, DictLoader
+from .types import BabelRegex
 
 if TYPE_CHECKING:  # pragma: no cover
     from pydantic.error_wrappers import ErrorDict
@@ -21,7 +23,7 @@ class PydanticI18n:
 
         self.source = source
         self.default_locale = default_locale
-        self._pattern = self._init_pattern()
+        self._patterns = BabelRegex(self.source.get_translations(self.default_locale))
 
     def _init_pattern(self) -> Pattern[str]:
         keys = list(self.source.get_translations(self.default_locale))
@@ -30,24 +32,15 @@ class PydanticI18n:
         )
 
     def _translate(self, message: str, locale: str) -> str:
-        key = message
-        placeholder = ""
-        searched = self._pattern.search(message)
-
-        if searched:
-            groups = searched.groups()
-            index = groups.index(message)
-
-            if len(groups) > index + 1:
-                placeholder = groups[index + 1]
-            elif len(groups) > index:
-                placeholder = groups[index]
-
-            placeholder = placeholder or ""
-            if placeholder and key != placeholder:
-                key = key.replace(placeholder, "{}")
-
-        return self.source.gettext(key, locale).replace("{}", placeholder)
+        source_msg_pattern = self._patterns.get(message)
+        if source_msg_pattern:
+            expression = self._patterns.expression(source_msg_pattern)
+            expression_compiled = re.compile(expression)
+            match = re.match(pattern=expression_compiled, string=message)
+            groups = match.groups()
+            target_msg_pattern = self.source.gettext(source_msg_pattern, locale=locale)
+            return Formatter().format(target_msg_pattern, *groups)
+        return message
 
     @property
     def locales(self) -> Sequence[str]:
