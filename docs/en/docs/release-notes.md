@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mypy from 1.2.0 to 1.3.0. PR [#120](https://github.com/boardpack/pydantic-i18n/pull/120) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.26.1 to 2.27.0. PR [#109](https://github.com/boardpack/pydantic-i18n/pull/109) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pytest from 7.3.0 to 7.3.1. PR [#110](https://github.com/boardpack/pydantic-i18n/pull/110) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.0.2 to 2.1.1. PR [#112](https://github.com/boardpack/pydantic-i18n/pull/112) by [@dependabot[bot]](https://github.com/apps/dependabot).
