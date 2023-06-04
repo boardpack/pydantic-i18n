@@ -31,23 +31,29 @@ class PydanticI18n:
 
     def _translate(self, message: str, locale: str) -> str:
         key = message
-        placeholder = ""
+        placeholder_values = []
+        placeholder_indexes = []
         searched = self._pattern.search(message)
 
         if searched:
-            groups = searched.groups()
-            index = groups.index(message)
+            for group_index in range(len(searched.groups())):
+                group_index += 1
+                start = searched.start(group_index)
+                end = searched.end(group_index)
 
-            if len(groups) > index + 1:
-                placeholder = groups[index + 1]
-            elif len(groups) > index:
-                placeholder = groups[index]
+                if start != end and not (start == 0 and end == len(message)):
+                    placeholder_indexes.append((start, end))
+                    placeholder_values.append(searched.group(group_index))
 
-            placeholder = placeholder or ""
-            if placeholder and key != placeholder:
-                key = key.replace(placeholder, "{}")
+        if placeholder_indexes:
+            key = ""
+            prev = 0
 
-        return self.source.gettext(key, locale).replace("{}", placeholder)
+            for start, end in placeholder_indexes:
+                key += message[prev:start] + "{}"
+                prev = end
+
+        return self.source.gettext(key, locale).format(*placeholder_values)
 
     @property
     def locales(self) -> Sequence[str]:
