@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mkdocs from 1.4.2 to 1.4.3. PR [#117](https://github.com/boardpack/pydantic-i18n/pull/117) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.7.0 to 0.9.0. PR [#118](https://github.com/boardpack/pydantic-i18n/pull/118) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.2.0 to 1.3.0. PR [#120](https://github.com/boardpack/pydantic-i18n/pull/120) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.26.1 to 2.27.0. PR [#109](https://github.com/boardpack/pydantic-i18n/pull/109) by [@dependabot[bot]](https://github.com/apps/dependabot).
