@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump pytest-cov from 4.0.0 to 4.1.0. PR [#128](https://github.com/boardpack/pydantic-i18n/pull/128) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 3.1.3 to 3.1.4. PR [#122](https://github.com/boardpack/pydantic-i18n/pull/122) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs from 1.4.2 to 1.4.3. PR [#117](https://github.com/boardpack/pydantic-i18n/pull/117) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.7.0 to 0.9.0. PR [#118](https://github.com/boardpack/pydantic-i18n/pull/118) by [@dependabot[bot]](https://github.com/apps/dependabot).
