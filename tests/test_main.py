@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Dict
+from typing import Dict, Tuple
 
 import pytest
 
@@ -164,3 +164,29 @@ def test_last_key_without_placeholder():
     translated_errors = tr.translate(e.value.errors(), locale=locale)
 
     assert _translations[locale][message] == translated_errors[0]["msg"]
+
+
+def test_multiple_placeholders():
+    _translations = {
+        "en_US": {
+            "wrong tuple length {}, expected {}": "wrong tuple length {}, expected {}",
+            "field required": "field required",
+        },
+        "de_DE": {
+            "wrong tuple length {}, expected {}": "falsche Tupellänge {}, erwartet {}",
+            "field required": "Feld erforderlich",
+        },
+    }
+
+    class MyModel(BaseModel):
+        value: Tuple[str, str]
+
+    tr = PydanticI18n(_translations)
+
+    with pytest.raises(ValidationError) as e:
+        MyModel(value=(1,))
+
+    locale = "de_DE"
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
+
+    assert translated_errors[0]["msg"] == "falsche Tupellänge 1, erwartet 2"
