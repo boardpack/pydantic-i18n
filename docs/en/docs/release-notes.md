@@ -2,29 +2,30 @@
 
 ## Latest Changes
 
+
+## 0.4.0
+
+### Features
+
+* 🐛 Add multiple placeholders support. PR [#127](https://github.com/boardpack/pydantic-i18n/pull/127) by [@dukkee](https://github.com/dukkee).
+
+### Fixes
+
+* 👷 Add cache step to the test workflow. PR [#95](https://github.com/boardpack/pydantic-i18n/pull/95) by [@dukkee](https://github.com/dukkee).
+* 🐛 Add lint step to the test workflow. PR [#93](https://github.com/boardpack/pydantic-i18n/pull/93) by [@dukkee](https://github.com/dukkee).
+
+### Internal
+
 * ⬆ Bump pytest from 7.3.1 to 7.4.0. PR [#133](https://github.com/boardpack/pydantic-i18n/pull/133) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.1.1 to 2.2.0. PR [#134](https://github.com/boardpack/pydantic-i18n/pull/134) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.3.0 to 1.4.1. PR [#135](https://github.com/boardpack/pydantic-i18n/pull/135) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* 🐛 Add multiple placeholders support. PR [#127](https://github.com/boardpack/pydantic-i18n/pull/127) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump pytest-cov from 4.0.0 to 4.1.0. PR [#128](https://github.com/boardpack/pydantic-i18n/pull/128) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 3.1.3 to 3.1.4. PR [#122](https://github.com/boardpack/pydantic-i18n/pull/122) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs from 1.4.2 to 1.4.3. PR [#117](https://github.com/boardpack/pydantic-i18n/pull/117) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.7.0 to 0.9.0. PR [#118](https://github.com/boardpack/pydantic-i18n/pull/118) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mypy from 1.2.0 to 1.3.0. PR [#120](https://github.com/boardpack/pydantic-i18n/pull/120) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.26.1 to 2.27.0. PR [#109](https://github.com/boardpack/pydantic-i18n/pull/109) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump pytest from 7.3.0 to 7.3.1. PR [#110](https://github.com/boardpack/pydantic-i18n/pull/110) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump autoflake from 2.0.2 to 2.1.1. PR [#112](https://github.com/boardpack/pydantic-i18n/pull/112) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump codecov/codecov-action from 3.1.2 to 3.1.3. PR [#113](https://github.com/boardpack/pydantic-i18n/pull/113) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump pytest from 7.2.2 to 7.3.0. PR [#107](https://github.com/boardpack/pydantic-i18n/pull/107) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump codecov/codecov-action from 3.1.1 to 3.1.2. PR [#108](https://github.com/boardpack/pydantic-i18n/pull/108) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump dawidd6/action-download-artifact from 2.26.0 to 2.26.1. PR [#104](https://github.com/boardpack/pydantic-i18n/pull/104) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mypy from 1.1.1 to 1.2.0. PR [#105](https://github.com/boardpack/pydantic-i18n/pull/105) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 23.1.0 to 23.3.0. PR [#102](https://github.com/boardpack/pydantic-i18n/pull/102) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump autoflake from 2.0.1 to 2.0.2. PR [#97](https://github.com/boardpack/pydantic-i18n/pull/97) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔥 Remove tox. PR [#96](https://github.com/boardpack/pydantic-i18n/pull/96) by [@dukkee](https://github.com/dukkee).
-* 👷 Add cache step to the test workflow. PR [#95](https://github.com/boardpack/pydantic-i18n/pull/95) by [@dukkee](https://github.com/dukkee).
-* 🐛 Add lint step to the test workflow. PR [#93](https://github.com/boardpack/pydantic-i18n/pull/93) by [@dukkee](https://github.com/dukkee).
-* ⬆ Bump mypy from 1.0.1 to 1.1.1. PR [#91](https://github.com/boardpack/pydantic-i18n/pull/91) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.3.1
 
