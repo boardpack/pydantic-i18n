@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump autoflake from 2.1.1 to 2.2.0. PR [#134](https://github.com/boardpack/pydantic-i18n/pull/134) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.3.0 to 1.4.1. PR [#135](https://github.com/boardpack/pydantic-i18n/pull/135) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🐛 Add multiple placeholders support. PR [#127](https://github.com/boardpack/pydantic-i18n/pull/127) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump pytest-cov from 4.0.0 to 4.1.0. PR [#128](https://github.com/boardpack/pydantic-i18n/pull/128) by [@dependabot[bot]](https://github.com/apps/dependabot).
