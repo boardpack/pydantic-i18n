@@ -48,7 +48,7 @@ test = [
     "pytest-lazy-fixture ==0.6.3",
     "mypy ==1.4.1",
     "flake8 ==6.0.0",
-    "black ==23.3.0",
+    "black ==23.7.0",
     "isort ==5.12.0",
     "babel ==2.12.1",
 ]
