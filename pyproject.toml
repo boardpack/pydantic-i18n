@@ -58,7 +58,7 @@ dev = [
     "pre-commit",
 ]
 doc = [
-    "mkdocs ==1.4.3",
+    "mkdocs ==1.5.2",
     "mkdocs-material ==8.5.11",
     "markdown ==3.2.1",
     "markdown-include ==0.8.1",
