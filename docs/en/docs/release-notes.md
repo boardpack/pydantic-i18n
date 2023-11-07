@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump dawidd6/action-download-artifact from 2.27.0 to 2.28.0. PR [#154](https://github.com/boardpack/pydantic-i18n/pull/154) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.4.0
 
