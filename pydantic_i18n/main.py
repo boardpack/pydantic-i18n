@@ -30,7 +30,6 @@ class PydanticI18n:
         )
 
     def _translate(self, message: str, locale: str) -> str:
-        key = message
         placeholder_values = []
         placeholder_indexes = []
         searched = self._pattern.search(message)
@@ -45,13 +44,12 @@ class PydanticI18n:
                     placeholder_indexes.append((start, end))
                     placeholder_values.append(searched.group(group_index))
 
-        if placeholder_indexes:
-            key = ""
-            prev = 0
-
-            for start, end in placeholder_indexes:
-                key += message[prev:start] + "{}"
-                prev = end
+        key = ""
+        prev = 0
+        for start, end in placeholder_indexes:
+            key += message[prev:start] + "{}"
+            prev = end
+        key += message[prev:]
 
         return self.source.gettext(key, locale).format(*placeholder_values)
 

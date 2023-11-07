@@ -1,15 +1,17 @@
+from decimal import Decimal
 from enum import Enum
 from typing import Dict, Tuple
 
 import pytest
 
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 from pydantic_i18n import BaseLoader, DictLoader, PydanticI18n
 
 translations = {
     "en_US": {
         "field required": "field required",
         "value is not a valid enumeration member; permitted: {}": "value is not a valid enumeration member; permitted: {}",
+        "ensure that there are no more than {} digits in total": "ensure that there are no more than {} digits in total",
     },
     "de_DE": {
         "field required": "Feld erforderlich",
@@ -118,7 +120,7 @@ def test_dict_source():
         pytest.lazy_fixture("babel_loader"),
     ],
 )
-def test_key_with_placeholder(loader: BaseLoader):
+def test_key_with_placeholder_at_the_end(loader: BaseLoader):
     class ACoolEnum(Enum):
         NINE_TO_TWELVE = "9_to_12"
         TWELVE_TO_FIFTEEN = "12_to_15"
@@ -138,6 +140,30 @@ def test_key_with_placeholder(loader: BaseLoader):
         translated_errors[0]["msg"]
         == "el valor no es uno de los valores permitidos, que son: '9_to_12', "
         "'12_to_15', '14_to_18'"
+    )
+
+
+@pytest.mark.parametrize(
+    "loader",
+    [
+        pytest.lazy_fixture("dict_loader"),
+        pytest.lazy_fixture("babel_loader"),
+    ],
+)
+def test_key_with_placeholder_in_the_middle(loader: BaseLoader):
+    class T(BaseModel):
+        decimal_field: Decimal = Field(max_digits=3)
+
+    tr = PydanticI18n(loader, default_locale="en_US")
+
+    locale = "en_US"
+    with pytest.raises(ValidationError) as e:
+        T(decimal_field=1111)
+
+    translated_errors = tr.translate(e.value.errors(), locale=locale)
+    assert (
+        translated_errors[0]["msg"]
+        == "ensure that there are no more than 3 digits in total"
     )
 
 
