@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mkdocs from 1.4.3 to 1.5.3. PR [#155](https://github.com/boardpack/pydantic-i18n/pull/155) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.27.0 to 2.28.0. PR [#154](https://github.com/boardpack/pydantic-i18n/pull/154) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.4.0
