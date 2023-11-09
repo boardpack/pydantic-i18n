@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump pytest from 7.4.0 to 7.4.3. PR [#168](https://github.com/boardpack/pydantic-i18n/pull/168) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump flake8 from 6.0.0 to 6.1.0. PR [#167](https://github.com/boardpack/pydantic-i18n/pull/167) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🐛 fix: key's ending after placeholders is not matched. PR [#161](https://github.com/boardpack/pydantic-i18n/pull/161) by [@niqzart](https://github.com/niqzart).
 * ⬆ Bump nwtgck/actions-netlify from 2.0.0 to 2.1.0. PR [#145](https://github.com/boardpack/pydantic-i18n/pull/145) by [@dependabot[bot]](https://github.com/apps/dependabot).
