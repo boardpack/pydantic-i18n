@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump flake8 from 6.0.0 to 6.1.0. PR [#167](https://github.com/boardpack/pydantic-i18n/pull/167) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🐛 fix: key's ending after placeholders is not matched. PR [#161](https://github.com/boardpack/pydantic-i18n/pull/161) by [@niqzart](https://github.com/niqzart).
 * ⬆ Bump nwtgck/actions-netlify from 2.0.0 to 2.1.0. PR [#145](https://github.com/boardpack/pydantic-i18n/pull/145) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/checkout from 3 to 4. PR [#150](https://github.com/boardpack/pydantic-i18n/pull/150) by [@dependabot[bot]](https://github.com/apps/dependabot).
