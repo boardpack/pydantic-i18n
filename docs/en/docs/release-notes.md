@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump babel from 2.12.1 to 2.13.1. PR [#166](https://github.com/boardpack/pydantic-i18n/pull/166) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.2.0 to 2.2.1. PR [#165](https://github.com/boardpack/pydantic-i18n/pull/165) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pytest from 7.4.0 to 7.4.3. PR [#168](https://github.com/boardpack/pydantic-i18n/pull/168) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump flake8 from 6.0.0 to 6.1.0. PR [#167](https://github.com/boardpack/pydantic-i18n/pull/167) by [@dependabot[bot]](https://github.com/apps/dependabot).
