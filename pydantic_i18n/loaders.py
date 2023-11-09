@@ -80,7 +80,7 @@ class BabelLoader(BaseLoader):
         for dir_name in os.listdir(translations_directory):
             locale = Locale.parse(dir_name)
             self.translations[str(locale)] = Translations.load(
-                translations_directory, [locale]  # type: ignore
+                translations_directory, [locale]
             )
 
     @property
