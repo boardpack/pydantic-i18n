@@ -1,6 +1,6 @@
 import json
 import re
-from typing import TYPE_CHECKING, Callable, Dict, List, Pattern, Sequence, Union
+from typing import TYPE_CHECKING, Callable, Dict, List, Pattern, Sequence, Union, cast
 
 from .loaders import BaseLoader, DictLoader
 
@@ -63,10 +63,13 @@ class PydanticI18n:
         locale: str,
     ) -> List["ErrorDict"]:
         return [
-            {
-                **error,  # type: ignore
-                "msg": self._translate(error["msg"], locale),
-            }
+            cast(
+                "ErrorDict",
+                {
+                    **error,
+                    "msg": self._translate(error["msg"], locale),
+                },
+            )
             for error in errors
         ]
 
