@@ -85,13 +85,10 @@ class PydanticI18n:
 
     @classmethod
     def _get_pydantic_messages_dict(cls) -> Dict[str, str]:
-        from pydantic import __version__ as pydantic_semantic_version
-
-        major_version = int(pydantic_semantic_version.split(".")[0])
-        if major_version == 1:
-            from pydantic import errors
-        else:
+        try:
             from pydantic.v1 import errors
+        except ImportError:
+            from pydantic import errors
 
         messages = (
             re.sub(r"\{.+\}", "{}", getattr(errors, name).msg_template)
