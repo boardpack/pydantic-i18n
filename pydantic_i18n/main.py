@@ -88,7 +88,7 @@ class PydanticI18n:
         try:
             from pydantic.v1 import errors
         except ImportError:
-            from pydantic import errors
+            from pydantic import errors # type: ignore[no-redef]
 
         messages = (
             re.sub(r"\{.+\}", "{}", getattr(errors, name).msg_template)
