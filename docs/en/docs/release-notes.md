@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mkdocs-material from 8.5.11 to 9.5.8. PR [#203](https://github.com/boardpack/pydantic-i18n/pull/203) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 4 to 5. PR [#182](https://github.com/boardpack/pydantic-i18n/pull/182) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump isort from 5.12.0 to 5.13.2. PR [#189](https://github.com/boardpack/pydantic-i18n/pull/189) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 2.28.0 to 3.0.0. PR [#190](https://github.com/boardpack/pydantic-i18n/pull/190) by [@dependabot[bot]](https://github.com/apps/dependabot).
