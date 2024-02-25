@@ -85,7 +85,10 @@ class PydanticI18n:
 
     @classmethod
     def _get_pydantic_messages_dict(cls) -> Dict[str, str]:
-        from pydantic import errors
+        try:
+            from pydantic.v1 import errors
+        except ImportError:
+            from pydantic import errors  # type: ignore[no-redef]
 
         messages = (
             re.sub(r"\{.+\}", "{}", getattr(errors, name).msg_template)
