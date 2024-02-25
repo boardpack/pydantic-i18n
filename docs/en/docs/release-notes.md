@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump actions/cache from 3 to 4. PR [#195](https://github.com/boardpack/pydantic-i18n/pull/195) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 3.1.4 to 4.0.1. PR [#201](https://github.com/boardpack/pydantic-i18n/pull/201) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 23.10.1 to 23.11.0. PR [#173](https://github.com/boardpack/pydantic-i18n/pull/173) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.4.1 to 1.7.0. PR [#174](https://github.com/boardpack/pydantic-i18n/pull/174) by [@dependabot[bot]](https://github.com/apps/dependabot).
