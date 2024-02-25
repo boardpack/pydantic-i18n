@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🔧 Change dependabot schedule interval to weekly. PR [#205](https://github.com/boardpack/pydantic-i18n/pull/205) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump babel from 2.13.1 to 2.14.0. PR [#188](https://github.com/boardpack/pydantic-i18n/pull/188) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-material from 8.5.11 to 9.5.8. PR [#203](https://github.com/boardpack/pydantic-i18n/pull/203) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 4 to 5. PR [#182](https://github.com/boardpack/pydantic-i18n/pull/182) by [@dependabot[bot]](https://github.com/apps/dependabot).
