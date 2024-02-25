@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump dawidd6/action-download-artifact from 2.28.0 to 3.0.0. PR [#190](https://github.com/boardpack/pydantic-i18n/pull/190) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/upload-artifact from 3 to 4. PR [#191](https://github.com/boardpack/pydantic-i18n/pull/191) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/cache from 3 to 4. PR [#195](https://github.com/boardpack/pydantic-i18n/pull/195) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 3.1.4 to 4.0.1. PR [#201](https://github.com/boardpack/pydantic-i18n/pull/201) by [@dependabot[bot]](https://github.com/apps/dependabot).
