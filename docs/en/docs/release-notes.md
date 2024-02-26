@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 4.0.1 to 4.0.2. PR [#207](https://github.com/boardpack/pydantic-i18n/pull/207) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown from 3.2.1 to 3.5.2. PR [#209](https://github.com/boardpack/pydantic-i18n/pull/209) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 23.11.0 to 24.2.0. PR [#211](https://github.com/boardpack/pydantic-i18n/pull/211) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.2.1 to 2.3.0. PR [#212](https://github.com/boardpack/pydantic-i18n/pull/212) by [@dependabot[bot]](https://github.com/apps/dependabot).
