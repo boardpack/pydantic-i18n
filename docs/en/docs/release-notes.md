@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump autoflake from 2.2.1 to 2.3.0. PR [#212](https://github.com/boardpack/pydantic-i18n/pull/212) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ✨ Add Pydantic 2 support. PR [#213](https://github.com/boardpack/pydantic-i18n/pull/213) by [@dukkee](https://github.com/dukkee).
 * 🔧 Change dependabot schedule interval to weekly. PR [#205](https://github.com/boardpack/pydantic-i18n/pull/205) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump babel from 2.13.1 to 2.14.0. PR [#188](https://github.com/boardpack/pydantic-i18n/pull/188) by [@dependabot[bot]](https://github.com/apps/dependabot).
