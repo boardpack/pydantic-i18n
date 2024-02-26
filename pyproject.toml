@@ -54,7 +54,7 @@ test = [
     "babel ==2.14.0",
 ]
 dev = [
-    "autoflake ==2.2.1",
+    "autoflake ==2.3.0",
     "flake8 ==6.1.0",
     "pre-commit",
 ]
