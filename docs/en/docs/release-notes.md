@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 4.0.2 to 4.1.0. PR [#215](https://github.com/boardpack/pydantic-i18n/pull/215) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump flake8 from 6.1.0 to 7.0.0. PR [#208](https://github.com/boardpack/pydantic-i18n/pull/208) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 3.0.0 to 3.1.2. PR [#206](https://github.com/boardpack/pydantic-i18n/pull/206) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 4.0.1 to 4.0.2. PR [#207](https://github.com/boardpack/pydantic-i18n/pull/207) by [@dependabot[bot]](https://github.com/apps/dependabot).
