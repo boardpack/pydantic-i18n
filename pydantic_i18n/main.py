@@ -26,7 +26,7 @@ class PydanticI18n:
     def _init_pattern(self) -> Pattern[str]:
         keys = list(self.source.get_translations(self.default_locale))
         return re.compile(
-            "|".join("({})".format(i.replace("{}", "(.+)")) for i in keys)
+            "|".join("({})".format(re.escape(i).replace(r"\{\}", "(.+)")) for i in keys)
         )
 
     def _translate(self, message: str, locale: str) -> str:

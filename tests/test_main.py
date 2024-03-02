@@ -213,3 +213,33 @@ def test_multiple_placeholders():
         translated_errors[0]["msg"]
         == "Tupel sollte nach der Validierung höchstens 2 Elemente haben, nicht 3"
     )
+
+
+def test_invalid_regexp():
+    _translations = {
+        "en_US": {
+            "This contains a partial [ regexp": "This contains a partial [ regexp",
+        },
+        "de_DE": {
+            "This contains a partial [ regexp": "Hier ist eine partielle [ regexp",
+        },
+    }
+    # all we test here is that loading doesn't crash
+    PydanticI18n(_translations)
+
+
+def test_valid_regexp():
+    _translations = {
+        "en_US": {
+            "This contains [a] regexp": "This contains [a] regexp",
+        },
+        "de_DE": {
+            "This contains [a] regexp": "Hier ist [eine] regexp",
+        },
+    }
+
+    tr = PydanticI18n(_translations)
+
+    locale = "de_DE"
+    translated_errors = tr.translate([{"msg": "This contains [a] regexp"}], locale=locale)
+    assert translated_errors[0]["msg"] == "Hier ist [eine] regexp"
