@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🐛 Fix code coverage. PR [#220](https://github.com/boardpack/pydantic-i18n/pull/220) by [@dukkee](https://github.com/dukkee).
 * 🐛 Fix handling regexp-chars in translation keys (#216). PR [#217](https://github.com/boardpack/pydantic-i18n/pull/217) by [@clemenskol](https://github.com/clemenskol).
 * ⬆ Bump mkdocs-material from 9.5.8 to 9.5.11. PR [#214](https://github.com/boardpack/pydantic-i18n/pull/214) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 4.0.2 to 4.1.0. PR [#215](https://github.com/boardpack/pydantic-i18n/pull/215) by [@dependabot[bot]](https://github.com/apps/dependabot).
