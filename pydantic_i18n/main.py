@@ -87,7 +87,7 @@ class PydanticI18n:
     def _get_pydantic_messages_dict(cls) -> Dict[str, str]:
         try:
             from pydantic.v1 import errors
-        except ImportError:
+        except ImportError:  # pragma: no cover
             from pydantic import errors  # type: ignore[no-redef]
 
         messages = (
