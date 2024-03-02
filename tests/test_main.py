@@ -108,6 +108,38 @@ def test_unsupported_locale(tr: PydanticI18n):
     assert str(e.value) == f"Locale '{locale}' wasn't found."
 
 
+def test_curly_bracket_in_message():
+    # This test covers the a case where the message does not map to any translation and
+    # is thus used "as is". Thus, we don't need any inputs to translate
+    locale = "en_US"
+    _translations = {locale: {}}
+
+    tr = PydanticI18n(_translations)
+
+    test_errors = [{"msg": "test {"}]
+    translated_errors = tr.translate(test_errors, locale=locale)
+
+    assert translated_errors == test_errors
+
+
+def test_curly_bracket_in_translation():
+    _translations = {
+        "en_US": {
+            "Value error, test {bar} {'foo': 3}": "Field required",
+        },
+        "de_DE": {
+            "Value error, test {bar} {'foo': 3}": "Feld erforderlich",
+        },
+    }
+
+    tr = PydanticI18n(_translations)
+
+    locale = "de_DE"
+    translated_errors = tr.translate([{"msg": "Value error, test {bar} {'foo': 3}"}], locale=locale)
+
+    assert translated_errors[0]["msg"] == "Feld erforderlich"
+
+
 def test_dict_source():
     tr = PydanticI18n(translations)
     assert isinstance(tr.source, BaseLoader)

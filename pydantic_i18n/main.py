@@ -51,7 +51,19 @@ class PydanticI18n:
             prev = end
         key += message[prev:]
 
-        return self.source.gettext(key, locale).format(*placeholder_values)
+        # NOTE: If we have placeholder values in the input text, we assume the
+        # translated texts have the correct number of placeholders in the target
+        # language. If we have too many placeholder values, Python will ignore
+        # them. If we have too few, we have to handle the `IndexError` (and return
+        # the un-translated text to be on the safe side).
+        message_translated = self.source.gettext(key, locale)
+        # NOTE: If there are no placeholder_values, we not only can but must skip
+        # formatting in the off-chance that the message contains format characters {
+        # or } (especially if the lookup above failed and we use the un-translated
+        # message)
+        if placeholder_values:
+            message_translated = message_translated.format(*placeholder_values)
+        return message_translated
 
     @property
     def locales(self) -> Sequence[str]:
