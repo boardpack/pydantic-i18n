@@ -135,7 +135,9 @@ def test_curly_bracket_in_translation():
     tr = PydanticI18n(_translations)
 
     locale = "de_DE"
-    translated_errors = tr.translate([{"msg": "Value error, test {bar} {'foo': 3}"}], locale=locale)
+    translated_errors = tr.translate(
+        [{"msg": "Value error, test {bar} {'foo': 3}"}], locale=locale
+    )
 
     assert translated_errors[0]["msg"] == "Feld erforderlich"
 
