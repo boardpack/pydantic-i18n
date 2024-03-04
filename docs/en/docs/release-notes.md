@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🐛 Fix handling { in translation message. PR [#219](https://github.com/boardpack/pydantic-i18n/pull/219) by [@clemenskol](https://github.com/clemenskol).
 
 ## 0.4.1
 
