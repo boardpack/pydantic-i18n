@@ -73,17 +73,31 @@ class PydanticI18n:
         self,
         errors: List["ErrorDict"],
         locale: str,
+        type_search: bool = False,
     ) -> List["ErrorDict"]:
-        return [
-            cast(
-                "ErrorDict",
-                {
-                    **error,
-                    "msg": self._translate(error["msg"], locale),
-                },
+        result = []
+
+        for error in errors:
+            message = error["msg"]
+            error_type = error.get("type")
+
+            translated_message = self._translate(message, locale)
+            if type_search and error_type and translated_message == message:
+                translated_message = self._translate(error_type, locale)
+                if translated_message == error_type:
+                    translated_message = message
+
+            result.append(
+                cast(
+                    "ErrorDict",
+                    {
+                        **error,
+                        "msg": translated_message,
+                    },
+                )
             )
-            for error in errors
-        ]
+
+        return result
 
     @classmethod
     def get_pydantic_messages(cls, output: str = "dict") -> Union[Dict[str, str], str]:

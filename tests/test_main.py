@@ -58,10 +58,19 @@ def test_locales(tr: PydanticI18n):
                 "Field required": "Feld erforderlich",
             },
         },
+        {
+            "en_US": {
+                "missing": "Field required",
+            },
+            "de_DE": {
+                "missing": "Feld erforderlich",
+            },
+        },
     ],
     ids=[
         "multiple_keys",
         "single_keys",
+        "type_search",
     ],
 )
 def test_required_message_translation(translation_data: Dict[str, Dict[str, str]]):
@@ -73,7 +82,7 @@ def test_required_message_translation(translation_data: Dict[str, Dict[str, str]
     with pytest.raises(ValidationError) as e:
         User()
 
-    translated_errors = tr.translate(e.value.errors(), locale="de_DE")
+    translated_errors = tr.translate(e.value.errors(), locale="de_DE", type_search=True)
     assert (
         translated_errors[0]["msg"] == translations["de_DE"][e.value.errors()[0]["msg"]]
     )
@@ -259,3 +268,26 @@ def test_valid_regexp():
         [{"msg": "This contains [a] regexp"}], locale=locale
     )
     assert translated_errors[0]["msg"] == "Hier ist [eine] regexp"
+
+
+def test_without_search_by_error_type():
+    _translations = {
+        "en_US": {
+            "missing": "Field required",
+        },
+        "de_DE": {
+            "missing": "Feld erforderlich",
+        },
+    }
+    tr = PydanticI18n(_translations)
+
+    class User(BaseModel):
+        name: str
+
+    with pytest.raises(ValidationError) as e:
+        User()
+
+    translated_errors = tr.translate(e.value.errors(), locale="de_DE")
+    assert (
+        translated_errors[0]["msg"] != translations["de_DE"][e.value.errors()[0]["msg"]]
+    )
