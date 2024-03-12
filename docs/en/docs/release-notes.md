@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mkdocs-material from 9.5.12 to 9.5.13. PR [#225](https://github.com/boardpack/pydantic-i18n/pull/225) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.8.0 to 1.9.0. PR [#226](https://github.com/boardpack/pydantic-i18n/pull/226) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Add translations search by the error type. PR [#223](https://github.com/boardpack/pydantic-i18n/pull/223) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump mkdocs-material from 9.5.11 to 9.5.12. PR [#222](https://github.com/boardpack/pydantic-i18n/pull/222) by [@dependabot[bot]](https://github.com/apps/dependabot).
