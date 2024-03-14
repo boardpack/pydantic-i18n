@@ -114,11 +114,11 @@ class PydanticI18n:
         try:
             from pydantic_core._pydantic_core import list_all_errors
         except ImportError:  # pragma: no cover
-            from pydantic import errors  # type: ignore[no-redef]
+            from pydantic import errors
 
-            list_all_errors = None
+            list_all_errors = None  # type: ignore
 
-        if list_all_errors:
+        if list_all_errors is not None:
             messages = [item["message_template_python"] for item in list_all_errors()]
         else:
             messages = (
