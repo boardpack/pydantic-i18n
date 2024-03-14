@@ -112,16 +112,26 @@ class PydanticI18n:
     @classmethod
     def _get_pydantic_messages_dict(cls) -> Dict[str, str]:
         try:
-            from pydantic.v1 import errors
+            from pydantic_core._pydantic_core import list_all_errors
         except ImportError:  # pragma: no cover
             from pydantic import errors  # type: ignore[no-redef]
 
-        messages = (
-            re.sub(r"\{.+\}", "{}", getattr(errors, name).msg_template)
-            for name in errors.__all__
-            if hasattr(getattr(errors, name), "msg_template")
-        )
-        return {value: value for value in messages}
+            list_all_errors = None
+
+        if list_all_errors:
+            messages = [item["message_template_python"] for item in list_all_errors()]
+        else:
+            messages = (
+                getattr(errors, name).msg_template
+                for name in errors.__all__
+                if hasattr(getattr(errors, name), "msg_template")
+            )
+
+        return {
+            value: value
+            for value in (re.sub(r"\{.+\}", "{}", item) for item in messages)
+            if value != "{}"
+        }
 
     @classmethod
     def _get_pydantic_messages_json(cls) -> str:
