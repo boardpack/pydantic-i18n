@@ -64,10 +64,10 @@ from pydantic_i18n import PydanticI18n
 
 translations = {
     "en_US": {
-        "field required": "field required",
+        "Field required": "field required",
     },
     "de_DE": {
-        "field required": "Feld erforderlich",
+        "Field required": "Feld erforderlich",
     },
 }
 
@@ -86,13 +86,18 @@ except ValidationError as e:
 print(translated_errors)
 # [
 #     {
+#         'type': 'missing',
 #         'loc': ('name',),
 #         'msg': 'Feld erforderlich',
-#         'type': 'value_error.missing'
+#         'input': {
+#
+#         },
+#         'url': 'https://errors.pydantic.dev/2.6/v/missing'
 #     }
 # ]
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/dict-loader/tutorial001.py))_
 
 In the next chapters, you will see current available loaders and how to
 implement your own loader.
@@ -120,10 +125,10 @@ DEFAULT_LOCALE = "en_US"
 
 translations = {
     "en_US": {
-        "field required": "field required",
+        "Field required": "field required",
     },
     "de_DE": {
-        "field required": "Feld erforderlich",
+        "Field required": "Feld erforderlich",
     },
 }
 
@@ -256,6 +261,57 @@ As a result, you will get the next response body:
 If you don't mention the `locale` param, English locale will be used by
 default.
 
+## Use placeholder in error strings
+
+You can use placeholders in error strings, but you **must mark** every placeholder with `{}`.
+
+```Python
+from decimal import Decimal
+
+from pydantic import BaseModel, ValidationError, Field
+from pydantic_i18n import PydanticI18n
+
+
+translations = {
+    "en_US": {
+        "Decimal input should have no more than {} in total":
+            "Decimal input should have no more than {} in total",
+    },
+    "es_AR": {
+        "Decimal input should have no more than {} in total":
+            "La entrada decimal no debe tener más de {} en total",
+    },
+}
+
+tr = PydanticI18n(translations)
+
+
+class CoolSchema(BaseModel):
+    my_field: Decimal = Field(max_digits=3)
+
+
+try:
+    CoolSchema(my_field=1111)
+except ValidationError as e:
+    translated_errors = tr.translate(e.errors(), locale="es_AR")
+
+print(translated_errors)
+# [
+#     {
+#         'type': 'decimal_max_digits',
+#         'loc': ('my_field',),
+#         'msg': 'La entrada decimal no debe tener más de 3 digits en total',
+#         'input': 1111,
+#         'ctx': {
+#             'max_digits': 3
+#         },
+#         'url': 'https://errors.pydantic.dev/2.6/v/decimal_max_digits'
+#     }
+# ]
+```
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/placeholder/tutorial001.py))_
+
 ## Get current error strings from Pydantic
 
 pydantic-i18n doesn't provide prepared translations of all current error
@@ -268,16 +324,17 @@ from pydantic_i18n import PydanticI18n
 
 print(PydanticI18n.get_pydantic_messages())
 # {
-#     "field required": "field required",
-#     "extra fields not permitted": "extra fields not permitted",
-#     "none is not an allowed value": "none is not an allowed value",
-#     "value is not none": "value is not none",
-#     "value could not be parsed to a boolean": "value could not be parsed to a boolean",
-#     "byte type expected": "byte type expected",
+#     "Object has no attribute '{}'": "Object has no attribute '{}'",
+#     "Invalid JSON: {}": "Invalid JSON: {}",
+#     "JSON input should be string, bytes or bytearray": "JSON input should be string, bytes or bytearray",
+#     "Recursion error - cyclic reference detected": "Recursion error - cyclic reference detected",
+#     "Field required": "Field required",
+#     "Field is frozen": "Field is frozen",
 #     .....
 # }
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/pydantic-messages/tutorial001.py))_
 
 You can also choose JSON string or Babel format with `output` parameter values
 `"json"` and `"babel"`:
@@ -287,25 +344,26 @@ from pydantic_i18n import PydanticI18n
 
 print(PydanticI18n.get_pydantic_messages(output="json"))
 # {
-#     "field required": "field required",
-#     "extra fields not permitted": "extra fields not permitted",
-#     "none is not an allowed value": "none is not an allowed value",
+#     "Field required": "Field required",
+#     "Field is frozen": "Field is frozen",
+#     "Error extracting attribute: {}": "Error extracting attribute: {}",
 #     .....
 # }
 
 print(PydanticI18n.get_pydantic_messages(output="babel"))
-# msgid "field required"
-# msgstr "field required"
+# msgid "Field required"
+# msgstr "Field required"
 #
-# msgid "extra fields not permitted"
-# msgstr "extra fields not permitted"
+# msgid "Field is frozen"
+# msgstr "Field is frozen"
 #
-# msgid "none is not an allowed value"
-# msgstr "none is not an allowed value"
+# msgid "Error extracting attribute: {}"
+# msgstr "Error extracting attribute: {}"
 # ....
 
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/pydantic-messages/tutorial002.py))_
 
 
 ## Loaders
@@ -324,10 +382,10 @@ from pydantic_i18n import PydanticI18n
 
 translations = {
     "en_US": {
-        "field required": "field required",
+        "Field required": "field required",
     },
     "de_DE": {
-        "field required": "Feld erforderlich",
+        "Field required": "Feld erforderlich",
     },
 }
 
@@ -346,13 +404,18 @@ except ValidationError as e:
 print(translated_errors)
 # [
 #     {
+#         'type': 'missing',
 #         'loc': ('name',),
 #         'msg': 'Feld erforderlich',
-#         'type': 'value_error.missing'
+#         'input': {
+#
+#         },
+#         'url': 'https://errors.pydantic.dev/2.6/v/missing'
 #     }
 # ]
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/dict-loader/tutorial001.py))_
 
 ### JsonLoader
 
@@ -370,7 +433,7 @@ where e.g. `en_US.json` looks like:
 
 ```json
 {
-    "field required": "field required"
+    "Field required": "Field required"
 }
 ```
 
@@ -378,7 +441,7 @@ and `de_DE.json`:
 
 ```json
 {
-    "field required": "Feld erforderlich"
+    "Field required": "Feld erforderlich"
 }
 ```
 
@@ -404,14 +467,20 @@ except ValidationError as e:
 print(translated_errors)
 # [
 #     {
-#         'loc': ('name',),
+#         'type': 'missing',
+#         'loc': ('name',
+#                 ),
 #         'msg': 'Feld erforderlich',
-#         'type': 'value_error.missing'
+#         'input': {
+#
+#         },
+#         'url': 'https://errors.pydantic.dev/2.6/v/missing'
 #     }
 # ]
 
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/json-loader/tutorial001.py))_
 
 ### BabelLoader
 
@@ -453,19 +522,24 @@ class User(BaseModel):
 try:
     User()
 except ValidationError as e:
-    translated_errors = tr.translate(e.errors(), locale="de")
+    translated_errors = tr.translate(e.errors(), locale="de_DE")
 
 print(translated_errors)
 # [
 #     {
+#         'type': 'missing',
 #         'loc': ('name',),
 #         'msg': 'Feld erforderlich',
-#         'type': 'value_error.missing'
+#         'input': {
+#
+#         },
+#         'url': 'https://errors.pydantic.dev/2.6/v/missing'
 #     }
 # ]
 
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/babel-loader/tutorial001.py))_
 
 ### Write your own loader
 
@@ -491,13 +565,13 @@ Here is an example of the loader to get translations from CSV files:
 `en_US.csv` content:
 
 ```csv
-field required,field required
+Field required,Field required
 ```
 
 `de_DE.csv` content:
 
 ```csv
-field required,Feld erforderlich
+Field required,Feld erforderlich
 ```
 
 ```Python
@@ -538,19 +612,24 @@ if __name__ == '__main__':
     try:
         User()
     except ValidationError as e:
-        translated_errors = tr.translate(e.errors(), locale="de")
+        translated_errors = tr.translate(e.errors(), locale="de_DE")
 
     print(translated_errors)
     # [
     #     {
+    #         'type': 'missing',
     #         'loc': ('name',),
     #         'msg': 'Feld erforderlich',
-    #         'type': 'value_error.missing'
+    #         'input': {
+    #
+    #         },
+    #         'url': 'https://errors.pydantic.dev/2.6/v/missing'
     #     }
     # ]
 
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/own-loader/tutorial001.py))_
 
 ## Acknowledgments
 

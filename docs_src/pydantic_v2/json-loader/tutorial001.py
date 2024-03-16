@@ -17,8 +17,13 @@ except ValidationError as e:
 print(translated_errors)
 # [
 #     {
-#         'loc': ('name',),
+#         'type': 'missing',
+#         'loc': ('name',
+#                 ),
 #         'msg': 'Feld erforderlich',
-#         'type': 'value_error.missing'
+#         'input': {
+#
+#         },
+#         'url': 'https://errors.pydantic.dev/2.6/v/missing'
 #     }
 # ]
