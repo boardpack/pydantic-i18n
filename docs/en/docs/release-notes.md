@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Update docs examples for the usage with Pydantic 2+. PR [#231](https://github.com/boardpack/pydantic-i18n/pull/231) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump pyyaml from 5.3.1 to 6.0.1. PR [#230](https://github.com/boardpack/pydantic-i18n/pull/230) by [@dukkee](https://github.com/dukkee).
 * 🐛 Fix the error messages source for the Pydantic 2. PR [#229](https://github.com/boardpack/pydantic-i18n/pull/229) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump nwtgck/actions-netlify from 2.1.0 to 3.0.0. PR [#224](https://github.com/boardpack/pydantic-i18n/pull/224) by [@dependabot[bot]](https://github.com/apps/dependabot).
