@@ -2,7 +2,7 @@
 
 __author__ = """Roman Sadzhenytsia"""
 __email__ = "urchin.dukkee@gmail.com"
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 from .loaders import BabelLoader, BaseLoader, DictLoader, JsonLoader
 from .main import PydanticI18n

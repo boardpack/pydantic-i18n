@@ -2,15 +2,22 @@
 
 ## Latest Changes
 
+
+## 0.4.2
+
+### Fixes
+
 * ⬆ Update docs examples for the usage with Pydantic 2+. PR [#231](https://github.com/boardpack/pydantic-i18n/pull/231) by [@dukkee](https://github.com/dukkee).
-* ⬆ Bump pyyaml from 5.3.1 to 6.0.1. PR [#230](https://github.com/boardpack/pydantic-i18n/pull/230) by [@dukkee](https://github.com/dukkee).
 * 🐛 Fix the error messages source for the Pydantic 2. PR [#229](https://github.com/boardpack/pydantic-i18n/pull/229) by [@dukkee](https://github.com/dukkee).
+* 🐛 Fix handling { in translation message. PR [#219](https://github.com/boardpack/pydantic-i18n/pull/219) by [@clemenskol](https://github.com/clemenskol).
+
+### Internal
+
+* ⬆ Bump pyyaml from 5.3.1 to 6.0.1. PR [#230](https://github.com/boardpack/pydantic-i18n/pull/230) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump nwtgck/actions-netlify from 2.1.0 to 3.0.0. PR [#224](https://github.com/boardpack/pydantic-i18n/pull/224) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-material from 9.5.12 to 9.5.13. PR [#225](https://github.com/boardpack/pydantic-i18n/pull/225) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.8.0 to 1.9.0. PR [#226](https://github.com/boardpack/pydantic-i18n/pull/226) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Add translations search by the error type. PR [#223](https://github.com/boardpack/pydantic-i18n/pull/223) by [@dukkee](https://github.com/dukkee).
-* ⬆ Bump mkdocs-material from 9.5.11 to 9.5.12. PR [#222](https://github.com/boardpack/pydantic-i18n/pull/222) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* 🐛 Fix handling { in translation message. PR [#219](https://github.com/boardpack/pydantic-i18n/pull/219) by [@clemenskol](https://github.com/clemenskol).
 
 ## 0.4.1
 
