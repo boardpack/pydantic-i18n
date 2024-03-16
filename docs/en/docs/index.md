@@ -63,9 +63,10 @@ To translate messages, you need to pass result of `exception.errors()` call to
 the `translate` method:
 
 ```Python  hl_lines="14 24"
-{!../../../docs_src/dict-loader/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/dict-loader/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/dict-loader/tutorial001.py))_
 
 In the next chapters, you will see current available loaders and how to
 implement your own loader.
@@ -79,13 +80,13 @@ Here is a simple example usage with FastAPI.
 Let's create a `tr.py` file:
 
 ```Python linenums="1" hl_lines="13-22 25-26 32 35"
-{!../../../docs_src/fastapi-usage/tr.py!}
+{!../../../docs_src/pydantic_v2/fastapi-usage/tr.py!}
 ```
 
-`11-20`: As you see, we selected the simplest variant to store translations,
+`13-22`: As you see, we selected the simplest variant to store translations,
 you can use any that you need.
 
-`23-24`: To not include `locale` query parameter into every handler, we
+`25-26`: To not include `locale` query parameter into every handler, we
 created a simple function `get_locale`, which we will include as a global
 dependency with `Depends`.
 
@@ -95,7 +96,7 @@ validation exception.
 Now we are ready to create a FastAPI application:
 
 ```Python linenums="1" hl_lines="8 10"
-{!../../../docs_src/fastapi-usage/main.py!}
+{!../../../docs_src/pydantic_v2/fastapi-usage/main.py!}
 ```
 
 `8`: Add `get_locale` function as a global dependency.
@@ -181,9 +182,10 @@ default.
 You can use placeholders in error strings, but you **must mark** every placeholder with `{}`.
 
 ```Python
-{!../../../docs_src/placeholder/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/placeholder/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/placeholder/tutorial001.py))_
 
 ## Get current error strings from Pydantic
 
@@ -193,17 +195,19 @@ messages from pydantic, but you can use a special class method
 default, it returns a `dict` object:
 
 ```Python
-{!../../../docs_src/pydantic-messages/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/pydantic-messages/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/pydantic-messages/tutorial001.py))_
 
 You can also choose JSON string or Babel format with `output` parameter values
 `"json"` and `"babel"`:
 
 ```Python
-{!../../../docs_src/pydantic-messages/tutorial002.py!}
+{!../../../docs_src/pydantic_v2/pydantic-messages/tutorial002.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/pydantic-messages/tutorial002.py))_
 
 
 ## Loaders
@@ -216,9 +220,10 @@ DictLoader is the simplest loader and default in PydanticI18n. So you can
 just pass your translations dictionary without any other preparation steps.
 
 ```Python
-{!../../../docs_src/dict-loader/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/dict-loader/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/dict-loader/tutorial001.py))_
 
 ### JsonLoader
 
@@ -235,21 +240,22 @@ JsonLoader needs to get the path to some directory with the next structure:
 where e.g. `en_US.json` looks like:
 
 ```json
-{!../../../docs_src/json-loader/translations/en_US.json!}
+{!../../../docs_src/pydantic_v2/json-loader/translations/en_US.json!}
 ```
 
 and `de_DE.json`:
 
 ```json
-{!../../../docs_src/json-loader/translations/de_DE.json!}
+{!../../../docs_src/pydantic_v2/json-loader/translations/de_DE.json!}
 ```
 
 Then we can use `JsonLoader` to load our translations:
 
 ```Python
-{!../../../docs_src/json-loader/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/json-loader/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/json-loader/tutorial001.py))_
 
 ### BabelLoader
 
@@ -283,9 +289,10 @@ from [this article](https://phrase.com/blog/posts/i18n-advantages-babel-python/#
 Here is an example of the `BabelLoader` usage:
 
 ```Python
-{!../../../docs_src/babel-loader/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/babel-loader/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/babel-loader/tutorial001.py))_
 
 ### Write your own loader
 
@@ -312,19 +319,20 @@ Here is an example of the loader to get translations from CSV files:
 
 ```csv
 
-{!../../../docs_src/own-loader/translations/en_US.csv!}
+{!../../../docs_src/pydantic_v2/own-loader/translations/en_US.csv!}
 ```
 
 `de_DE.csv` content:
 
 ```csv
-{!../../../docs_src/own-loader/translations/de_DE.csv!}
+{!../../../docs_src/pydantic_v2/own-loader/translations/de_DE.csv!}
 ```
 
 ```Python
-{!../../../docs_src/own-loader/tutorial001.py!}
+{!../../../docs_src/pydantic_v2/own-loader/tutorial001.py!}
 ```
-_(This script is complete, it should run "as is")_
+_(This script is complete, it should run "as is" for Pydantic 2+, an example for Pydantic 1 is
+[here](https://github.com/boardpack/pydantic-i18n/blob/master/docs_src/pydantic_v1/own-loader/tutorial001.py))_
 
 ## Acknowledgments
 

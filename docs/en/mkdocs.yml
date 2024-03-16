@@ -21,6 +21,7 @@ theme:
   - search.suggest
   - search.highlight
   - navigation.tabs
+  - content.code.copy
   icon:
     repo: fontawesome/brands/github-alt
   logo: img/icon-white.png
