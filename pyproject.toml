@@ -50,7 +50,7 @@ test = [
     "pytest-lazy-fixture ==0.6.3",
     "mypy ==1.9.0",
     "flake8 ==7.0.0",
-    "black ==24.2.0",
+    "black ==24.3.0",
     "isort ==5.13.2",
     "babel ==2.14.0",
 ]
