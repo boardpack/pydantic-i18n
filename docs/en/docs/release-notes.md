@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump dawidd6/action-download-artifact from 3.1.2 to 3.1.4. PR [#236](https://github.com/boardpack/pydantic-i18n/pull/236) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.4.3
 
