@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump autoflake from 2.3.0 to 2.3.1. PR [#234](https://github.com/boardpack/pydantic-i18n/pull/234) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown from 3.5.2 to 3.6. PR [#232](https://github.com/boardpack/pydantic-i18n/pull/232) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 3.1.2 to 3.1.4. PR [#236](https://github.com/boardpack/pydantic-i18n/pull/236) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
