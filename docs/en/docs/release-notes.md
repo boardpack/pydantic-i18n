@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mkdocs-material from 9.5.13 to 9.5.14. PR [#233](https://github.com/boardpack/pydantic-i18n/pull/233) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.2.0 to 24.3.0. PR [#235](https://github.com/boardpack/pydantic-i18n/pull/235) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.3.0 to 2.3.1. PR [#234](https://github.com/boardpack/pydantic-i18n/pull/234) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown from 3.5.2 to 3.6. PR [#232](https://github.com/boardpack/pydantic-i18n/pull/232) by [@dependabot[bot]](https://github.com/apps/dependabot).
