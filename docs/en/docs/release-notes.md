@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump pytest-cov from 4.1.0 to 5.0.0. PR [#239](https://github.com/boardpack/pydantic-i18n/pull/239) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.9.0 to 0.10.0. PR [#237](https://github.com/boardpack/pydantic-i18n/pull/237) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-material from 9.5.14 to 9.5.15. PR [#238](https://github.com/boardpack/pydantic-i18n/pull/238) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-material from 9.5.13 to 9.5.14. PR [#233](https://github.com/boardpack/pydantic-i18n/pull/233) by [@dependabot[bot]](https://github.com/apps/dependabot).
