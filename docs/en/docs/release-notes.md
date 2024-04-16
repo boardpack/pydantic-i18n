@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 4.2.0 to 4.3.0. PR [#248](https://github.com/boardpack/pydantic-i18n/pull/248) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.3.0 to 24.4.0. PR [#247](https://github.com/boardpack/pydantic-i18n/pull/247) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.12.2 to 0.12.3. PR [#246](https://github.com/boardpack/pydantic-i18n/pull/246) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 4.1.1 to 4.2.0. PR [#243](https://github.com/boardpack/pydantic-i18n/pull/243) by [@dependabot[bot]](https://github.com/apps/dependabot).
