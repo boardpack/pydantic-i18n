@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* 🐛 Add encoding option to JsonLoader. PR [#252](https://github.com/boardpack/pydantic-i18n/pull/252) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump mkdocs-material from 9.5.17 to 9.5.18. PR [#250](https://github.com/boardpack/pydantic-i18n/pull/250) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 4.2.0 to 4.3.0. PR [#248](https://github.com/boardpack/pydantic-i18n/pull/248) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.3.0 to 24.4.0. PR [#247](https://github.com/boardpack/pydantic-i18n/pull/247) by [@dependabot[bot]](https://github.com/apps/dependabot).
