@@ -40,13 +40,14 @@ class DictLoader(BaseLoader):
 
 
 class JsonLoader(BaseLoader):
-    def __init__(self, directory: str):
+    def __init__(self, directory: str, encoding: str = "utf-8"):
         if not os.path.exists(directory):
             raise OSError(f"Directory '{directory}' doesn't exist.")
         if not os.path.isdir(directory):
             raise OSError(f"'{directory}' is not a directory.")
 
         self.directory = directory
+        self.encoding = encoding
 
     @property
     def locales(self) -> Sequence[str]:
@@ -58,7 +59,9 @@ class JsonLoader(BaseLoader):
         return locales
 
     def get_translations(self, locale: str) -> Mapping[str, str]:
-        with open(os.path.join(self.directory, f"{locale}.json")) as fp:
+        with open(
+            os.path.join(self.directory, f"{locale}.json"), encoding=self.encoding
+        ) as fp:
             data: Dict[str, str] = json.load(fp)
 
         return data
