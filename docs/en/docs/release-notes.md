@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump black from 24.4.0 to 24.4.2. PR [#256](https://github.com/boardpack/pydantic-i18n/pull/256) by [@dependabot[bot]](https://github.com/apps/dependabot).
 ## 0.4.4
 
 ### Features
