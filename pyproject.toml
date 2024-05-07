@@ -52,7 +52,7 @@ test = [
     "flake8 ==7.0.0",
     "black ==24.4.2",
     "isort ==5.13.2",
-    "babel ==2.14.0",
+    "babel ==2.15.0",
 ]
 dev = [
     "autoflake ==2.3.1",
