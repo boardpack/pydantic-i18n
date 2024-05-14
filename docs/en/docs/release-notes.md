@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 4.3.0 to 4.3.1. PR [#259](https://github.com/boardpack/pydantic-i18n/pull/259) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump babel from 2.14.0 to 2.15.0. PR [#257](https://github.com/boardpack/pydantic-i18n/pull/257) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.9.0 to 1.10.0. PR [#253](https://github.com/boardpack/pydantic-i18n/pull/253) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.4.0 to 24.4.2. PR [#256](https://github.com/boardpack/pydantic-i18n/pull/256) by [@dependabot[bot]](https://github.com/apps/dependabot).
