@@ -68,7 +68,7 @@ class JsonLoader(BaseLoader):
 
 
 class BabelLoader(BaseLoader):
-    def __init__(self, translations_directory: str):
+    def __init__(self, translations_directory: str, domain: str = "messages"):
         try:
             from babel import Locale
             from babel.support import Translations
@@ -83,7 +83,9 @@ class BabelLoader(BaseLoader):
         for dir_name in os.listdir(translations_directory):
             locale = Locale.parse(dir_name)
             self.translations[str(locale)] = Translations.load(
-                translations_directory, [locale]
+                translations_directory,
+                [locale],
+                domain=domain,
             )
 
     @property
