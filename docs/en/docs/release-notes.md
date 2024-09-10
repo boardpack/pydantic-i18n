@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump typer from 0.12.3 to 0.12.5. PR [#293](https://github.com/boardpack/pydantic-i18n/pull/293) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown from 3.6 to 3.7. PR [#294](https://github.com/boardpack/pydantic-i18n/pull/294) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.10.0 to 1.11.2. PR [#286](https://github.com/boardpack/pydantic-i18n/pull/286) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.4.2 to 24.8.0. PR [#281](https://github.com/boardpack/pydantic-i18n/pull/281) by [@dependabot[bot]](https://github.com/apps/dependabot).
