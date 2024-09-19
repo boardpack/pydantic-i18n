@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump babel from 2.15.0 to 2.16.0. PR [#297](https://github.com/boardpack/pydantic-i18n/pull/297) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-markdownextradata-plugin from 0.2.5 to 0.2.6. PR [#292](https://github.com/boardpack/pydantic-i18n/pull/292) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pyyaml from 6.0.1 to 6.0.2. PR [#291](https://github.com/boardpack/pydantic-i18n/pull/291) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.12.3 to 0.12.5. PR [#293](https://github.com/boardpack/pydantic-i18n/pull/293) by [@dependabot[bot]](https://github.com/apps/dependabot).
