@@ -3,6 +3,7 @@ import re
 from typing import Dict
 
 import pytest
+from _pytest.fixtures import FixtureRequest
 
 from pydantic_i18n import PydanticI18n
 
@@ -37,14 +38,16 @@ def babel_output() -> Dict[str, str]:
 
 
 @pytest.mark.parametrize(
-    "output",
+    "output_fixture_name",
     [
-        pytest.lazy_fixture("json_output"),
-        pytest.lazy_fixture("dict_output"),
-        pytest.lazy_fixture("babel_output"),
+        "json_output",
+        "dict_output",
+        "babel_output",
     ],
 )
-def test_messages(output: Dict[str, str]) -> None:
+def test_messages(request: FixtureRequest, output_fixture_name: str) -> None:
+    output = request.getfixturevalue(output_fixture_name)
+
     for k, v in output.items():
         assert isinstance(k, str)
         assert k == v
@@ -56,14 +59,16 @@ def test_dict_by_default():
 
 
 @pytest.mark.parametrize(
-    "output",
+    "output_fixture_name",
     [
-        pytest.lazy_fixture("json_output"),
-        pytest.lazy_fixture("dict_output"),
-        pytest.lazy_fixture("babel_output"),
+        "json_output",
+        "dict_output",
+        "babel_output",
     ],
 )
-def test_placeholders_dict(output: Dict[str, str]):
+def test_placeholders_dict(request: FixtureRequest, output_fixture_name: str) -> None:
+    output = request.getfixturevalue(output_fixture_name)
+
     for k in output:
         if "{" in k:
             assert "{}" in k
