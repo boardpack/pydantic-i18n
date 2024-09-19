@@ -2,6 +2,7 @@ from decimal import Decimal
 from typing import Dict, Tuple
 
 import pytest
+from _pytest.fixtures import FixtureRequest
 
 from pydantic import BaseModel, Field, ValidationError
 from pydantic.color import Color
@@ -137,13 +138,17 @@ def test_dict_source():
 
 
 @pytest.mark.parametrize(
-    "loader",
+    "loader_fixture_name",
     [
-        # pytest.lazy_fixture("dict_loader"),
-        pytest.lazy_fixture("babel_loader"),
+        # "dict_loader",
+        "babel_loader",
     ],
 )
-def test_key_with_placeholder_at_the_end(loader: BaseLoader):
+def test_key_with_placeholder_at_the_end(
+    request: FixtureRequest, loader_fixture_name: str
+):
+    loader = request.getfixturevalue(loader_fixture_name)
+
     class CoolSchema(BaseModel):
         color_field: Color
 
@@ -161,13 +166,17 @@ def test_key_with_placeholder_at_the_end(loader: BaseLoader):
 
 
 @pytest.mark.parametrize(
-    "loader",
+    "loader_fixture_name",
     [
-        pytest.lazy_fixture("dict_loader"),
-        pytest.lazy_fixture("babel_loader"),
+        "dict_loader",
+        "babel_loader",
     ],
 )
-def test_key_with_placeholder_in_the_middle(loader: BaseLoader):
+def test_key_with_placeholder_in_the_middle(
+    request: FixtureRequest, loader_fixture_name: str
+):
+    loader = request.getfixturevalue(loader_fixture_name)
+
     class T(BaseModel):
         decimal_field: Decimal = Field(max_digits=3)
 
