@@ -285,6 +285,7 @@ translations directory with the next structure:
 Information about translations preparation you can find on the
 [Babel docs pages](http://babel.pocoo.org/en/latest/cmdline.html){:target="_blank"} and e.g.
 from [this article](https://phrase.com/blog/posts/i18n-advantages-babel-python/#Message_Extraction){:target="_blank"}.
+If you need to use another domain, you can pass the `domain` argument to the loader constructor.
 
 Here is an example of the `BabelLoader` usage:
 
