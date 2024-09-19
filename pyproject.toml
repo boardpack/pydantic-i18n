@@ -45,7 +45,7 @@ Source = "https://github.com/boardpack/pydantic-i18n"
 [project.optional-dependencies]
 test = [
     "pydantic >=2",
-    "pytest ==7.4.3",
+    "pytest ==8.3.3",
     "pytest-cov ==5.0.0",
     "mypy ==1.11.2",
     "flake8 ==7.1.1",
