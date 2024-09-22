@@ -2,7 +2,15 @@
 
 ## Latest Changes
 
+
+## 0.4.5
+
+### Features
+
 * ✨ Add domain parameter to the Babel loader. PR [#290](https://github.com/boardpack/pydantic-i18n/pull/290) by [@dukkee](https://github.com/dukkee).
+
+### Internal
+
 * 👷 Remove pytest-lazy-fixture package usage. PR [#298](https://github.com/boardpack/pydantic-i18n/pull/298) by [@dukkee](https://github.com/dukkee).
 * ⬆ Bump babel from 2.15.0 to 2.16.0. PR [#297](https://github.com/boardpack/pydantic-i18n/pull/297) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mkdocs-markdownextradata-plugin from 0.2.5 to 0.2.6. PR [#292](https://github.com/boardpack/pydantic-i18n/pull/292) by [@dependabot[bot]](https://github.com/apps/dependabot).
@@ -14,12 +22,7 @@
 * ⬆ Bump dawidd6/action-download-artifact from 4 to 6. PR [#269](https://github.com/boardpack/pydantic-i18n/pull/269) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 4.4.1 to 4.5.0. PR [#270](https://github.com/boardpack/pydantic-i18n/pull/270) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump flake8 from 7.0.0 to 7.1.1. PR [#280](https://github.com/boardpack/pydantic-i18n/pull/280) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump dawidd6/action-download-artifact from 3.1.4 to 4. PR [#265](https://github.com/boardpack/pydantic-i18n/pull/265) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump codecov/codecov-action from 4.3.1 to 4.4.1. PR [#263](https://github.com/boardpack/pydantic-i18n/pull/263) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump codecov/codecov-action from 4.3.0 to 4.3.1. PR [#259](https://github.com/boardpack/pydantic-i18n/pull/259) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump babel from 2.14.0 to 2.15.0. PR [#257](https://github.com/boardpack/pydantic-i18n/pull/257) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mypy from 1.9.0 to 1.10.0. PR [#253](https://github.com/boardpack/pydantic-i18n/pull/253) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump black from 24.4.0 to 24.4.2. PR [#256](https://github.com/boardpack/pydantic-i18n/pull/256) by [@dependabot[bot]](https://github.com/apps/dependabot).
+
 ## 0.4.4
 
 ### Features
@@ -32,17 +35,7 @@
 * ⬆ Bump codecov/codecov-action from 4.2.0 to 4.3.0. PR [#248](https://github.com/boardpack/pydantic-i18n/pull/248) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.3.0 to 24.4.0. PR [#247](https://github.com/boardpack/pydantic-i18n/pull/247) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.12.2 to 0.12.3. PR [#246](https://github.com/boardpack/pydantic-i18n/pull/246) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump codecov/codecov-action from 4.1.1 to 4.2.0. PR [#243](https://github.com/boardpack/pydantic-i18n/pull/243) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mkdocs-material from 9.5.16 to 9.5.17. PR [#244](https://github.com/boardpack/pydantic-i18n/pull/244) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump typer from 0.12.0 to 0.12.2. PR [#245](https://github.com/boardpack/pydantic-i18n/pull/245) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump codecov/codecov-action from 4.1.0 to 4.1.1. PR [#240](https://github.com/boardpack/pydantic-i18n/pull/240) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mkdocs-material from 9.5.15 to 9.5.16. PR [#241](https://github.com/boardpack/pydantic-i18n/pull/241) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump typer from 0.10.0 to 0.12.0. PR [#242](https://github.com/boardpack/pydantic-i18n/pull/242) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pytest-cov from 4.1.0 to 5.0.0. PR [#239](https://github.com/boardpack/pydantic-i18n/pull/239) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump typer from 0.9.0 to 0.10.0. PR [#237](https://github.com/boardpack/pydantic-i18n/pull/237) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mkdocs-material from 9.5.14 to 9.5.15. PR [#238](https://github.com/boardpack/pydantic-i18n/pull/238) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump mkdocs-material from 9.5.13 to 9.5.14. PR [#233](https://github.com/boardpack/pydantic-i18n/pull/233) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump black from 24.2.0 to 24.3.0. PR [#235](https://github.com/boardpack/pydantic-i18n/pull/235) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump autoflake from 2.3.0 to 2.3.1. PR [#234](https://github.com/boardpack/pydantic-i18n/pull/234) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown from 3.5.2 to 3.6. PR [#232](https://github.com/boardpack/pydantic-i18n/pull/232) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 3.1.2 to 3.1.4. PR [#236](https://github.com/boardpack/pydantic-i18n/pull/236) by [@dependabot[bot]](https://github.com/apps/dependabot).
