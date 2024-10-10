@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 4.5.0 to 4.6.0. PR [#302](https://github.com/boardpack/pydantic-i18n/pull/302) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.4.5
 
