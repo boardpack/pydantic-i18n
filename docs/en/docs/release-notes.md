@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump mypy from 1.12.0 to 1.13.0. PR [#307](https://github.com/boardpack/pydantic-i18n/pull/307) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.11.2 to 1.12.0. PR [#303](https://github.com/boardpack/pydantic-i18n/pull/303) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump codecov/codecov-action from 4.5.0 to 4.6.0. PR [#302](https://github.com/boardpack/pydantic-i18n/pull/302) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
