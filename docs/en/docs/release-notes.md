@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 4.6.0 to 5.1.2. PR [#324](https://github.com/boardpack/pydantic-i18n/pull/324) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 6 to 7. PR [#316](https://github.com/boardpack/pydantic-i18n/pull/316) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pytest from 8.3.3 to 8.3.4. PR [#318](https://github.com/boardpack/pydantic-i18n/pull/318) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump mypy from 1.12.0 to 1.13.0. PR [#307](https://github.com/boardpack/pydantic-i18n/pull/307) by [@dependabot[bot]](https://github.com/apps/dependabot).
