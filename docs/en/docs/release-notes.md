@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump babel from 2.16.0 to 2.17.0. PR [#331](https://github.com/boardpack/pydantic-i18n/pull/331) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pytest-cov from 5.0.0 to 6.0.0. PR [#308](https://github.com/boardpack/pydantic-i18n/pull/308) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump typer from 0.12.5 to 0.15.1. PR [#320](https://github.com/boardpack/pydantic-i18n/pull/320) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.8.0 to 24.10.0. PR [#301](https://github.com/boardpack/pydantic-i18n/pull/301) by [@dependabot[bot]](https://github.com/apps/dependabot).
