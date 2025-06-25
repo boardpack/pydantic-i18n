@@ -2,6 +2,7 @@
 
 ## Latest Changes
 
+* ⬆ Bump codecov/codecov-action from 5.1.2 to 5.4.0. PR [#338](https://github.com/boardpack/pydantic-i18n/pull/338) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump dawidd6/action-download-artifact from 7 to 9. PR [#337](https://github.com/boardpack/pydantic-i18n/pull/337) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump black from 24.10.0 to 25.1.0. PR [#332](https://github.com/boardpack/pydantic-i18n/pull/332) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump babel from 2.16.0 to 2.17.0. PR [#331](https://github.com/boardpack/pydantic-i18n/pull/331) by [@dependabot[bot]](https://github.com/apps/dependabot).
