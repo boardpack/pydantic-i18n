@@ -52,7 +52,7 @@ test = [
     "flake8 ==7.1.1",
     "black ==24.8.0; python_version<'3.9'",
     "black ==25.1.0; python_version>='3.9'",
-    "isort ==5.13.2",
+    "isort ==6.1.0",
     "babel ==2.17.0",
 ]
 dev = [
